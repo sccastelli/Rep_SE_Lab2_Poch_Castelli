@@ -1,0 +1,15 @@
+Command: make -j 10 all
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_1/main/ejercicio_1.c: In function 'hello_task':
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_1/main/ejercicio_1.c:17:16: error: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
+   17 |         printf(hello_count);
+      |                ^~~~~~~~~~~
+      |                |
+      |                int
+In file included from /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/stdio.h:10,
+                 from /Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_1/main/ejercicio_1.c:1:
+/Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/stdio.h:206:17: note: expected 'const char * restrict' but argument is of type 'int'
+  206 | int     printf (const char *__restrict, ...)
+      |                 ^
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_1.c.obj] Error 1
+make[1]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [all] Error 2
