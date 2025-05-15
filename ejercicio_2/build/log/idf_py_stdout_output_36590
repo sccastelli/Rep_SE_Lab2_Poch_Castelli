@@ -1,0 +1,890 @@
+Command: /Users/sofiacastelli/esp/idf-tools/python_env/idf5.5_py3.13_env/bin/python /Users/sofiacastelli/esp/idf/esp-idf/tools/idf_monitor.py -p /dev/cu.usbserial-0001 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_2/build/ejercicio_2.elf /Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_2/build/bootloader/bootloader.elf -m '/Users/sofiacastelli/esp/idf-tools/python_env/idf5.5_py3.13_env/bin/python' '/Users/sofiacastelli/esp/idf/esp-idf/tools/idf.py'
+hip revision: v3.0
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) bo����[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01�ets Jul 29 2019 12:21:46[0m
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2488-gee77c489e7 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr 24 2025 09:45:11[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v3.0[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a3ech ( 41964) map[0m
+[0;32mI (102) esp_image: segment 1: paddr=0001a414 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (102) esp_image: segment 2: paddr=0001a438 vaddr=3ffb0000 size=02324h (  8996) load[0m
+[0;32mI (109) esp_image: segment 3: paddr=0001c764 vaddr=40080000 size=038b4h ( 14516) load[0m
+[0;32mI (119) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=15314h ( 86804) map[0m
+[0;32mI (151) esp_image: segment 5: paddr=0003533c vaddr=400838b4 size=093a4h ( 37796) load[0m
+[0;32mI (172) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (172) boot: Disabling RNG early entropy source...[0m
+[0;32mI (183) cpu_start: Multicore app[0m
+[0;32mI (191) cpu_start: Pro cpu start user code[0m
+[0;32mI (191) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (191) app_init: Application information:[0m
+[0;32mI (191) app_init: Project name:     ejercicio_2[0m
+[0;32mI (195) app_init: App version:      6d87eb7-dirty[0m
+[0;32mI (200) app_init: Compile time:     May  8 2025 09:19:44[0m
+[0;32mI (205) app_init: ELF file SHA256:  9f93ed978...[0m
+[0;32mI (209) app_init: ESP-IDF:          v5.5-dev-2488-gee77c489e7[0m
+[0;32mI (215) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (219) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (223) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (227) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (233) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (238) heap_init: At 3FFB2BF0 len 0002D410 (181 KiB): DRAM[0m
+[0;32mI (243) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (248) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (254) heap_init: At 4008CC58 len 000133A8 (76 KiB): IRAM[0m
+[0;32mI (261) spi_flash: detected chip: generic[0m
+[0;32mI (263) spi_flash: flash io: dio[0m
+[0;33mW (266) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (278) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (286) main_task: Started on CPU0[0m
+[0;32mI (296) main_task: Calling app_main()[0m
+[0;32mI (296) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+ECG: 0, Presion: 0
+[0;32mI (296) main_task: Returned from app_main()[0m
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3919, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3781, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 3482, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3813, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3266, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3117, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2898, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2704, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2559, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2419, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2292, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2209, Presion: 0
+ECG: 256, Presion: 0
+ECG: 2019, Presion: 0
+ECG: 144, Presion: 0
+ECG: 1921, Presion: 0
+ECG: 289, Presion: 0
+ECG: 1831, Presion: 0
+ECG: 496, Presion: 0
+ECG: 1734, Presion: 0
+ECG: 579, Presion: 0
+ECG: 1623, Presion: 0
+ECG: 945, Presion: 0
+ECG: 1237, Presion: 0
+ECG: 1014, Presion: 0
+ECG: 1382, Presion: 0
+ECG: 1203, Presion: 0
+ECG: 1465, Presion: 0
+ECG: 1311, Presion: 0
+ECG: 1167, Presion: 0
+ECG: 1474, Presion: 0
+ECG: 1053, Presion: 0
+ECG: 1852, Presion: 0
+ECG: 928, Presion: 0
+ECG: 1995, Presion: 0
+ECG: 840, Presion: 0
+ECG: 2043, Presion: 0
+⚠️  Frecuencia de compresiones: 133.3 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 799, Presion: 0
+ECG: 2145, Presion: 0
+ECG: 692, Presion: 0
+ECG: 2203, Presion: 0
+ECG: 607, Presion: 0
+ECG: 2434, Presion: 0
+ECG: 545, Presion: 0
+ECG: 2315, Presion: 0
+ECG: 542, Presion: 0
+ECG: 2314, Presion: 0
+ECG: 317, Presion: 0
+ECG: 2502, Presion: 0
+ECG: 511, Presion: 0
+ECG: 2952, Presion: 0
+ECG: 391, Presion: 0
+ECG: 2751, Presion: 0
+ECG: 285, Presion: 0
+ECG: 2785, Presion: 0
+ECG: 275, Presion: 0
+ECG: 2992, Presion: 0
+ECG: 259, Presion: 0
+ECG: 2982, Presion: 0
+ECG: 208, Presion: 0
+ECG: 3161, Presion: 0
+ECG: 165, Presion: 0
+ECG: 3186, Presion: 0
+ECG: 131, Presion: 0
+ECG: 3360, Presion: 0
+ECG: 54, Presion: 0
+ECG: 3455, Presion: 0
+ECG: 5, Presion: 0
+ECG: 3520, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 3838, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4032, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4055, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3903, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3745, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3467, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3411, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3179, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3088, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2951, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2803, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2649, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2502, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2613, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 2208, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2000, Presion: 0
+ECG: 273, Presion: 0
+ECG: 1963, Presion: 0
+ECG: 482, Presion: 0
+ECG: 1854, Presion: 0
+ECG: 662, Presion: 0
+ECG: 1742, Presion: 0
+ECG: 730, Presion: 0
+ECG: 1632, Presion: 0
+ECG: 1010, Presion: 0
+ECG: 1488, Presion: 0
+ECG: 944, Presion: 0
+ECG: 1415, Presion: 0
+ECG: 1370, Presion: 0
+ECG: 1251, Presion: 0
+ECG: 1516, Presion: 0
+ECG: 1147, Presion: 0
+ECG: 1710, Presion: 0
+ECG: 1006, Presion: 0
+ECG: 1858, Presion: 0
+ECG: 880, Presion: 0
+ECG: 1584, Presion: 0
+ECG: 44, Presion: 0
+ECG: 0, Presion: 0
+ECG: 422, Presion: 0
+ECG: 2719, Presion: 0
+ECG: 285, Presion: 0
+ECG: 2692, Presion: 0
+⚠️  Frecuencia de compresiones: 193.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 309, Presion: 0
+ECG: 2829, Presion: 0
+ECG: 156, Presion: 0
+ECG: 3024, Presion: 0
+ECG: 134, Presion: 0
+ECG: 3189, Presion: 0
+ECG: 144, Presion: 0
+ECG: 3300, Presion: 0
+ECG: 80, Presion: 0
+ECG: 3220, Presion: 0
+ECG: 152, Presion: 0
+ECG: 3259, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3621, Presion: 0
+ECG: 7, Presion: 0
+ECG: 3702, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3671, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3894, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3843, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3520, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3468, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3407, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3280, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3196, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3184, Presion: 0
+⚠️  Frecuencia de compresiones: 187.5 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+ECG: 3222, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2983, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3090, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2822, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2919, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2861, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2480, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2304, Presion: 0
+ECG: 106, Presion: 0
+ECG: 2122, Presion: 0
+ECG: 435, Presion: 0
+ECG: 2014, Presion: 0
+ECG: 630, Presion: 0
+ECG: 1952, Presion: 0
+ECG: 757, Presion: 0
+ECG: 1845, Presion: 0
+ECG: 848, Presion: 0
+ECG: 1797, Presion: 0
+ECG: 1147, Presion: 0
+ECG: 1667, Presion: 0
+ECG: 1273, Presion: 0
+ECG: 1561, Presion: 0
+ECG: 1507, Presion: 0
+ECG: 1424, Presion: 0

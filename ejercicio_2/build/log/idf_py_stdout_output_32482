@@ -1,0 +1,600 @@
+Command: /Users/sofiacastelli/esp/idf-tools/python_env/idf5.5_py3.13_env/bin/python /Users/sofiacastelli/esp/idf/esp-idf/tools/idf_monitor.py -p /dev/cu.usbserial-0001 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_2/build/ejercicio_2.elf /Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_2/build/bootloader/bootloader.elf -m '/Users/sofiacastelli/esp/idf-tools/python_env/idf5.5_py3.13_env/bin/python' '/Users/sofiacastelli/esp/idf/esp-idf/tools/idf.py'
+hip revision: v3.0
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          0�ets Jul 29 2019 12:21:46[0m
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2488-gee77c489e7 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr 24 2025 09:45:11[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v3.0[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a35ch ( 41820) map[0m
+[0;32mI (102) esp_image: segment 1: paddr=0001a384 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (102) esp_image: segment 2: paddr=0001a3a8 vaddr=3ffb0000 size=02324h (  8996) load[0m
+[0;32mI (109) esp_image: segment 3: paddr=0001c6d4 vaddr=40080000 size=03944h ( 14660) load[0m
+[0;32mI (119) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=15254h ( 86612) map[0m
+[0;32mI (151) esp_image: segment 5: paddr=0003527c vaddr=40083944 size=09314h ( 37652) load[0m
+[0;32mI (172) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (172) boot: Disabling RNG early entropy source...[0m
+[0;32mI (182) cpu_start: Multicore app[0m
+[0;32mI (191) cpu_start: Pro cpu start user code[0m
+[0;32mI (191) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (191) app_init: Application information:[0m
+[0;32mI (191) app_init: Project name:     ejercicio_2[0m
+[0;32mI (195) app_init: App version:      6d87eb7-dirty[0m
+[0;32mI (200) app_init: Compile time:     May  8 2025 09:19:44[0m
+[0;32mI (205) app_init: ELF file SHA256:  b972e8492...[0m
+[0;32mI (209) app_init: ESP-IDF:          v5.5-dev-2488-gee77c489e7[0m
+[0;32mI (215) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (218) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (222) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (227) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (233) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (238) heap_init: At 3FFB2BF0 len 0002D410 (181 KiB): DRAM[0m
+[0;32mI (243) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (248) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (254) heap_init: At 4008CC58 len 000133A8 (76 KiB): IRAM[0m
+[0;32mI (260) spi_flash: detected chip: generic[0m
+[0;32mI (263) spi_flash: flash io: dio[0m
+[0;33mW (266) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (278) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (286) main_task: Started on CPU0[0m
+[0;32mI (296) main_task: Calling app_main()[0m
+[0;32mI (296) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+ECG: 4095, Presion: 0
+[0;32mI (296) main_task: Returned from app_main()[0m
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3967, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4080, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3839, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3903, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3939, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3910, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3999, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4095, Presion: 0
+ECG: 0, Presion: 0
+ECG: 4073, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3981, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3767, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3685, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3659, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3556, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3603, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3343, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3431, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3113, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3488, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3412, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3450, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3408, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3358, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3290, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3228, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3218, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3088, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3111, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3026, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3285, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2768, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3017, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2967, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2918, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3010, Presion: 0
+ECG: 0, Presion: 0
+ECG: 3011, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2864, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2864, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2870, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2866, Presion: 0
+ECG: 0, Presion: 0
+ECG: 2821, Presion: 0
+ECG: 96, Presion: 0
+ECG: 2697, Presion: 0
+ECG: 138, Presion: 0
+ECG: 2885, Presion: 0
+ECG: 226, Presion: 0
+ECG: 2832, Presion: 0
+ECG: 217, Presion: 0
+ECG: 2673, Presion: 0
+ECG: 250, Presion: 0
+ECG: 2651, Presion: 0
+ECG: 149, Presion: 0
+ECG: 2622, Presion: 0
+ECG: 326, Presion: 0
+ECG: 2557, Presion: 0
+ECG: 313, Presion: 0
+ECG: 2496, Presion: 0
+ECG: 316, Presion: 0
+ECG: 2437, Presion: 0
+ECG: 473, Presion: 0
+ECG: 2352, Presion: 0
+ECG: 469, Presion: 0
+ECG: 2311, Presion: 0
+ECG: 346, Presion: 0
+ECG: 2303, Presion: 0
+ECG: 430, Presion: 0
+ECG: 2225, Presion: 0
+ECG: 752, Presion: 0
+ECG: 2015, Presion: 0
+ECG: 464, Presion: 0
+ECG: 1959, Presion: 0
+ECG: 878, Presion: 0
+ECG: 2320, Presion: 0
+ECG: 722, Presion: 0
+ECG: 1963, Presion: 0
+ECG: 640, Presion: 0
+ECG: 1968, Presion: 0
+ECG: 766, Presion: 0
+ECG: 1899, Presion: 0
+ECG: 820, Presion: 0
+ECG: 1875, Presion: 0
+ECG: 800, Presion: 0
+ECG: 1806, Presion: 0
+ECG: 849, Presion: 0
+ECG: 1747, Presion: 0
+ECG: 892, Presion: 0
+ECG: 1743, Presion: 0
+ECG: 992, Presion: 0
+ECG: 1712, Presion: 0
+ECG: 1111, Presion: 0
+ECG: 1712, Presion: 0
+ECG: 1104, Presion: 0
+ECG: 1706, Presion: 0
+ECG: 1258, Presion: 0
+ECG: 1658, Presion: 0
+ECG: 1191, Presion: 0
+ECG: 1489, Presion: 0
+ECG: 1213, Presion: 0
+ECG: 1265, Presion: 0
+ECG: 1072, Presion: 0
+ECG: 1509, Presion: 0
+ECG: 1221, Presion: 0
+ECG: 1523, Presion: 0
+ECG: 1255, Presion: 0
+ECG: 1511, Presion: 0
+ECG: 1322, Presion: 0
+ECG: 1493, Presion: 0
+ECG: 1450, Presion: 0
+ECG: 1501, Presion: 0
+ECG: 1397, Presion: 0
+ECG: 1521, Presion: 0
+ECG: 1659, Presion: 0
+ECG: 1456, Presion: 0
+ECG: 1597, Presion: 0
+ECG: 1392, Presion: 0
+ECG: 0, Presion: 0
+ECG: 288, Presion: 0
+ECG: 2794, Presion: 0
+ECG: 491, Presion: 0
+ECG: 2962, Presion: 0
+ECG: 309, Presion: 0
+ECG: 2865, Presion: 0
+ECG: 635, Presion: 0
+ECG: 2854, Presion: 0
+ECG: 792, Presion: 0
+ECG: 2950, Presion: 0
+ECG: 638, Presion: 0
+ECG: 3176, Presion: 0
+ECG: 483, Presion: 0
+ECG: 3243, Presion: 0
+ECG: 470, Presion: 0
+ECG: 3114, Presion: 0
+ECG: 449, Presion: 0
+ECG: 3101, Presion: 0
+ECG: 427, Presion: 0
+ECG: 3161, Presion: 0
+ECG: 403, Presion: 0
+ECG: 3252, Presion: 0
+ECG: 390, Presion: 0
+ECG: 3136, Presion: 0
+ECG: 364, Presion: 0
+ECG: 3250, Presion: 0
+ECG: 343, Presion: 0
+ECG: 3275, Presion: 0
+ECG: 336, Presion: 0
+ECG: 3275, Presion: 0
+ECG: 314, Presion: 0
+ECG: 3238, Presion: 0
+ECG: 322, Presion: 0
+ECG: 3299, Presion: 0
+ECG: 480, Presion: 0
+ECG: 3183, Presion: 0
+ECG: 119, Presion: 0
+ECG: 3323, Presion: 0
+ECG: 304, Presion: 0
+ECG: 3323, Presion: 0
+ECG: 300, Presion: 0
+ECG: 3200, Presion: 0
+ECG: 287, Presion: 0
+ECG: 3328, Presion: 0
+ECG: 261, Presion: 0
+ECG: 3317, Presion: 0
+ECG: 192, Presion: 0
+ECG: 3254, Presion: 0
+ECG: 208, Presion: 0
+ECG: 3221, Presion: 0
+ECG: 185, Presion: 0
+ECG: 3454, Presion: 0
+ECG: 183, Presion: 0
+ECG: 3431, Presion: 0
+ECG: 179, Presion: 0
+ECG: 3421, Presion: 0
+ECG: 324, Presion: 0
+ECG: 3251, Presion: 0
+ECG: 161, Presion: 0
+ECG: 3583, Presion: 0
+ECG: 96, Presion: 0
+ECG: 3577, Presion: 0
+ECG: 142, Presion: 0
+ECG: 3436, Presion: 0
+ECG: 153, Presion: 0
+ECG: 3430, Presion: 0
+ECG: 171, Presion: 0
+ECG: 3459, Presion: 0
+ECG: 194, Presion: 0
+ECG: 3378, Presion: 0
+ECG: 181, Presion: 0
+ECG: 3525, Presion: 0
+ECG: 185, Presion: 0
+ECG: 3539, Presion: 0
+ECG: 187, Presion: 0
+ECG: 3373, Presion: 0
+ECG: 180, Presion: 0
+ECG: 3371, Presion: 0
+ECG: 176, Presion: 0
+ECG: 3546, Presion: 0
+ECG: 176, Presion: 0
+ECG: 3373, Presion: 0
+ECG: 179, Presion: 0
+ECG: 3487, Presion: 0
+ECG: 110, Presion: 0
+ECG: 3797, Presion: 0
+ECG: 222, Presion: 0
+ECG: 3251, Presion: 0
+ECG: 179, Presion: 0
+ECG: 3547, Presion: 0
+ECG: 174, Presion: 0
+ECG: 3499, Presion: 0
+ECG: 163, Presion: 0
+ECG: 3566, Presion: 0
+ECG: 171, Presion: 0
+ECG: 3343, Presion: 0
+ECG: 247, Presion: 0
+ECG: 3235, Presion: 0
+ECG: 223, Presion: 0
+ECG: 3391, Presion: 0
+ECG: 183, Presion: 0
+ECG: 3550, Presion: 0
+ECG: 189, Presion: 0
+ECG: 3385, Presion: 0
+ECG: 284, Presion: 0
+ECG: 3354, Presion: 0
+ECG: 267, Presion: 0
+ECG: 3181, Presion: 0
+ECG: 259, Presion: 0
+ECG: 3463, Presion: 0
+ECG: 347, Presion: 0
+ECG: 2886, Presion: 0
+ECG: 553, Presion: 0
+ECG: 2551, Presion: 0
+ECG: 551, Presion: 0
+ECG: 2651, Presion: 0
+ECG: 508, Presion: 0
+ECG: 2705, Presion: 0
+ECG: 464, Presion: 0
+ECG: 2849, Presion: 0
+ECG: 416, Presion: 0
+ECG: 2862, Presion: 0
+ECG: 371, Presion: 0
+ECG: 2947, Presion: 0
+ECG: 342, Presion: 0
+ECG: 2993, Presion: 0
+ECG: 314, Presion: 0
+ECG: 3024, Presion: 0
+ECG: 304, Presion: 0
+ECG: 3010, Presion: 0
+ECG: 288, Presion: 0
+ECG: 3041, Presion: 0
+ECG: 279, Presion: 0
+ECG: 3041, Presion: 0
+ECG: 240, Presion: 0
+ECG: 3036, Presion: 0
+ECG: 240, Presion: 0
+ECG: 3236, Presion: 0
+ECG: 272, Presion: 0
+ECG: 3248, Presion: 0
+ECG: 695, Presion: 0
+ECG: 3471, Presion: 0
+ECG: 192, Presion: 0
+ECG: 3332, Presion: 0
+ECG: 140, Presion: 0
+ECG: 3406, Presion: 0
+ECG: 145, Presion: 0
+ECG: 3393, Presion: 0
+ECG: 189, Presion: 0
+ECG: 3440, Presion: 0
+ECG: 209, Presion: 0
+ECG: 3401, Presion: 0
+ECG: 208, Presion: 0
+ECG: 3391, Presion: 0
+ECG: 191, Presion: 0
+ECG: 3408, Presion: 0
+ECG: 172, Presion: 0
+ECG: 3441, Presion: 0
+ECG: 144, Presion: 0
+ECG: 3638, Presion: 0
+ECG: 175, Presion: 0
+ECG: 3409, Presion: 0
+ECG: 138, Presion: 0
+ECG: 3498, Presion: 0

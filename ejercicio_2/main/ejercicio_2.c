@@ -5,9 +5,9 @@
 #include "driver/adc.h"
 #include "esp_adc_cal.h"
 
-#define ECG_CHANNEL ADC1_CHANNEL_6  // GPIO34 (cambia según conexión)
-#define PRESION_CHANNEL ADC1_CHANNEL_7  // GPIO35
-#define LED_GPIO GPIO_NUM_4
+#define ECG_CHANNEL ADC1_CHANNEL_6  // GPIO32 --> G27
+#define PRESION_CHANNEL ADC1_CHANNEL_4  // GPIO35
+#define LED_GPIO GPIO_NUM_14
 
 esp_adc_cal_characteristics_t *adc_chars;
 
@@ -19,28 +19,32 @@ void read_sensors_task(void *pvParameter) {
         int ecg_raw = adc1_get_raw(ECG_CHANNEL);
         int presion_raw = adc1_get_raw(PRESION_CHANNEL);
 
-        // Enviar por serial
-        printf("%d,%d\n", ecg_raw, presion_raw);
+        // Enviar por serial con etiquetas
+        printf("ECG: %d, Presion: %d\n", ecg_raw, presion_raw);
 
-        // Ejemplo de detección de compresión simple (umbral ficticio)
-        if (ecg_raw > 2000) {
+        // Detección de compresiones RCP
+        
             int now = xTaskGetTickCount() * portTICK_PERIOD_MS;
             int interval = now - last_peak_time;
             if (interval > 300) {
                 float freq = 60000.0 / interval;
 
+                printf("⚠️  Frecuencia de compresiones: %.1f cpm\n", freq);
+
                 if (freq < 100 || freq > 120) {
                     gpio_set_level(LED_GPIO, 1);
+                    printf("🚨 Frecuencia fuera de rango. LED ENCENDIDO\n");
                 } else {
                     gpio_set_level(LED_GPIO, 0);
+                    printf("✅ Frecuencia correcta. LED APAGADO\n");
                 }
 
                 last_peak_time = now;
                 peaks_detected++;
             }
-        }
+        
 
-        vTaskDelay(pdMS_TO_TICKS(10)); // Muestra cada 10 ms
+        vTaskDelay(pdMS_TO_TICKS(5000)); // 100 Hz
     }
 }
 

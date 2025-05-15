@@ -1,0 +1,380 @@
+Command: /Users/sofiacastelli/esp/idf-tools/python_env/idf5.5_py3.13_env/bin/python /Users/sofiacastelli/esp/idf/esp-idf/tools/idf_monitor.py -p /dev/cu.usbserial-0001 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_2/build/ejercicio_2.elf /Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_2/build/bootloader/bootloader.elf -m '/Users/sofiacastelli/esp/idf-tools/python_env/idf5.5_py3.13_env/bin/python' '/Users/sofiacastelli/esp/idf/esp-idf/tools/idf.py'
+ip revision: v3.0
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) ����[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01�ets Jul 29 2019 12:21:46[0m
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2488-gee77c489e7 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr 24 2025 09:45:11[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v3.0[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a34ch ( 41804) map[0m
+[0;32mI (102) esp_image: segment 1: paddr=0001a374 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (102) esp_image: segment 2: paddr=0001a398 vaddr=3ffb0000 size=02324h (  8996) load[0m
+[0;32mI (109) esp_image: segment 3: paddr=0001c6c4 vaddr=40080000 size=03954h ( 14676) load[0m
+[0;32mI (119) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=15254h ( 86612) map[0m
+[0;32mI (151) esp_image: segment 5: paddr=0003527c vaddr=40083954 size=09304h ( 37636) load[0m
+[0;32mI (172) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (172) boot: Disabling RNG early entropy source...[0m
+[0;32mI (182) cpu_start: Multicore app[0m
+[0;32mI (191) cpu_start: Pro cpu start user code[0m
+[0;32mI (191) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (191) app_init: Application information:[0m
+[0;32mI (191) app_init: Project name:     ejercicio_2[0m
+[0;32mI (195) app_init: App version:      6d87eb7-dirty[0m
+[0;32mI (200) app_init: Compile time:     May  8 2025 09:19:44[0m
+[0;32mI (205) app_init: ELF file SHA256:  f94f4bb9a...[0m
+[0;32mI (209) app_init: ESP-IDF:          v5.5-dev-2488-gee77c489e7[0m
+[0;32mI (215) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (218) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (222) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (226) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (233) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (238) heap_init: At 3FFB2BF0 len 0002D410 (181 KiB): DRAM[0m
+[0;32mI (243) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (248) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (254) heap_init: At 4008CC58 len 000133A8 (76 KiB): IRAM[0m
+[0;32mI (260) spi_flash: detected chip: generic[0m
+[0;32mI (263) spi_flash: flash io: dio[0m
+[0;33mW (266) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (278) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (286) main_task: Started on CPU0[0m
+[0;32mI (296) main_task: Calling app_main()[0m
+[0;32mI (296) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+1039,0
+[0;32mI (296) main_task: Returned from app_main()[0m
+0,0
+4095,176
+0,0
+4095,176
+0,0
+4095,190
+0,0
+4095,192
+0,0
+4095,186
+0,0
+4095,159
+0,0
+4095,207
+0,0
+4095,208
+0,0
+4095,187
+0,0
+4095,185
+0,0
+4095,218
+0,0
+4095,189
+0,0
+4095,190
+0,0
+4095,192
+0,0
+4095,182
+0,0
+4095,214
+0,0
+4095,210
+0,0
+4095,193
+0,0
+4095,227
+0,0
+4095,208
+0,0
+4095,203
+0,0
+4095,212
+0,0
+4095,186
+0,0
+4095,224
+0,0
+4095,198
+0,0
+4095,232
+0,0
+4095,195
+0,0
+4095,271
+0,0
+4095,222
+0,0
+4095,240
+0,0
+4095,241
+0,0
+4095,240
+0,0
+4095,226
+0,0
+4095,262
+0,0
+4095,235
+0,0
+4095,205
+0,0
+4095,239
+0,0
+4095,223
+0,0
+4095,286
+0,0
+4095,199
+0,0
+4095,238
+0,0
+4095,221
+0,0
+4095,224
+0,0
+4095,239
+0,0
+4095,240
+0,0
+4095,247
+0,0
+4095,247
+0,0
+4095,240
+0,0
+4095,201
+0,0
+4095,222
+0,0
+4095,219
+0,0
+4095,198
+0,0
+4095,228
+0,0
+4095,231
+0,0
+4095,234
+0,0
+4095,245
+0,0
+4095,237
+0,0
+4095,243
+0,0
+4095,231
+0,0
+4095,256
+0,0
+4095,247
+0,0
+4095,259
+0,0
+4095,247
+0,0
+4095,293
+0,0
+4095,234
+0,0
+4095,269
+0,0
+4095,246
+0,0
+4095,263
+0,0
+4095,256
+0,0
+4095,275
+0,0
+4095,242
+0,0
+4095,267
+0,0
+4095,272
+0,0
+4095,274
+0,0
+4095,294
+0,0
+4095,272
+0,0
+4095,305
+0,0
+4095,206
+0,0
+4095,257
+0,0
+4095,270
+0,0
+4095,272
+0,0
+4095,263
+0,0
+4095,271
+0,0
+4095,253
+0,0
+4095,249
+0,0
+4095,257
+0,0
+4095,239
+0,0
+4095,291
+0,0
+4095,272
+0,0
+4095,306
+0,0
+4095,292
+0,0
+4095,272
+0,0
+4095,278
+0,0
+4095,259
+0,0
+4095,271
+0,0
+4095,240
+0,0
+4095,264
+0,0
+4095,279
+0,0
+4095,263
+0,0
+4095,273
+0,0
+4095,240
+0,0
+4095,295
+0,0
+4095,263
+0,0
+4095,236
+0,0
+4095,271
+0,0
+4095,266
+0,0
+4095,267
+0,0
+4095,249
+0,0
+4095,268
+0,0
+4095,258
+0,0
+4095,257
+0,0
+4095,251
+0,0
+4095,254
+0,0
+4095,264
+0,0
+4095,271
+0,0
+4095,291
+0,0
+4095,285
+0,0
+4095,259
+0,0
+4095,270
+0,0
+4095,262
+0,0
+4095,285
+0,0
+4095,274
+0,0
+4095,271
+0,0
+4095,272
+0,0
+4095,279
+0,0
+4095,290
+0,0
+4095,230
+0,0
+4095,319
+0,0
+4095,277
+0,0
+4095,279
+0,0
+4095,277
+0,0
+4095,272
+0,0
+4095,278
+0,0
+4095,277
+0,0
+4095,278
+0,0
+4095,275
+0,0
+4095,282
+0,0
+4095,278
+0,0
+4095,239
+0,0
+4095,267
+0,0
+4095,323
+0,0
+4095,267
+0,0
+4095,256
+0,0
+4095,277
+0,0
+4095,277
+0,0
+4095,275
+0,0
+4095,283
+0,0
+4095,272
+0,0
+4095,272
+0,0
+4095,286
+0,0
+4095,277
+0,0
+4023,243
+0,0
+4095,293
+0,0
+4095,225
+0,0
+4095,280
+0,0
+4095,279
+0,0
+4095,275
+0,0

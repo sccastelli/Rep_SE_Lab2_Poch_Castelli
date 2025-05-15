@@ -1,0 +1,458 @@
+Command: /Users/sofiacastelli/esp/idf-tools/python_env/idf5.5_py3.13_env/bin/python /Users/sofiacastelli/esp/idf/esp-idf/tools/idf_monitor.py -p /dev/cu.usbserial-0001 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_2/build/ejercicio_2.elf /Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_2/build/bootloader/bootloader.elf -m '/Users/sofiacastelli/esp/idf-tools/python_env/idf5.5_py3.13_env/bin/python' '/Users/sofiacastelli/esp/idf/esp-idf/tools/idf.py'
+hip revision: v3.0
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) U����[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          0�ets Jul 29 2019 12:21:46[0m
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2488-gee77c489e7 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr 24 2025 09:45:11[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v3.0[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a3ech ( 41964) map[0m
+[0;32mI (102) esp_image: segment 1: paddr=0001a414 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (102) esp_image: segment 2: paddr=0001a438 vaddr=3ffb0000 size=02324h (  8996) load[0m
+[0;32mI (109) esp_image: segment 3: paddr=0001c764 vaddr=40080000 size=038b4h ( 14516) load[0m
+[0;32mI (119) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=1530ch ( 86796) map[0m
+[0;32mI (151) esp_image: segment 5: paddr=00035334 vaddr=400838b4 size=093a4h ( 37796) load[0m
+[0;32mI (172) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (172) boot: Disabling RNG early entropy source...[0m
+[0;32mI (183) cpu_start: Multicore app[0m
+[0;32mI (191) cpu_start: Pro cpu start user code[0m
+[0;32mI (191) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (191) app_init: Application information:[0m
+[0;32mI (191) app_init: Project name:     ejercicio_2[0m
+[0;32mI (195) app_init: App version:      6d87eb7-dirty[0m
+[0;32mI (200) app_init: Compile time:     May  8 2025 09:19:44[0m
+[0;32mI (205) app_init: ELF file SHA256:  402547352...[0m
+[0;32mI (209) app_init: ESP-IDF:          v5.5-dev-2488-gee77c489e7[0m
+[0;32mI (215) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (219) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (223) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (227) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (233) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (238) heap_init: At 3FFB2BF0 len 0002D410 (181 KiB): DRAM[0m
+[0;32mI (243) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (248) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (254) heap_init: At 4008CC58 len 000133A8 (76 KiB): IRAM[0m
+[0;32mI (261) spi_flash: detected chip: generic[0m
+[0;32mI (263) spi_flash: flash io: dio[0m
+[0;33mW (266) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (278) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (286) main_task: Started on CPU0[0m
+[0;32mI (296) main_task: Calling app_main()[0m
+[0;32mI (296) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+ECG: 432, Presion: 286
+[0;32mI (296) main_task: Returned from app_main()[0m
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 1830, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 237
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3974, Presion: 97
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4045, Presion: 171
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 407, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3987, Presion: 112
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3967, Presion: 112
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3947, Presion: 109
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3962, Presion: 107
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4017, Presion: 128
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3847, Presion: 91
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3975, Presion: 94
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3973, Presion: 87
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3986, Presion: 90
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3994, Presion: 96
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3986, Presion: 96
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3967, Presion: 92
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3927, Presion: 90
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3840, Presion: 93
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 2287, Presion: 16
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3235, Presion: 64
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 107
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 112
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 2256, Presion: 22
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3921, Presion: 85
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3419, Presion: 33
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 2269, Presion: 22
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 1311, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 134, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 16, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 959, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 113
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 112
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 101
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 107
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 103
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3728, Presion: 55
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 914, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 668, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 336, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 311, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 157, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 2306, Presion: 74
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 93
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 111
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 118
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 99
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 176
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 882, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 974, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 1827, Presion: 48
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3123, Presion: 128
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 140
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 2254, Presion: 25
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 161
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 1507, Presion: 11
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 643, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 2640, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 154
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 723, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3530, Presion: 20
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 75
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 2371, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 178
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 126
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 174
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 197, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 75, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 2263, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 105
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 114
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 98
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 151
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 115
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 112
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 555, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 99
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 80
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 108
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 804, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 1391, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 1941, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3019, Presion: 137
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 163
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 150
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 118
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 94
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3792, Presion: 87
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 155
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3212, Presion: 146
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 165
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 93
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 106
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3395, Presion: 16
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 62
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 102
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3016, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 97
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 95
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 2656, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 2029, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3207, Presion: 2
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 107
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 4095, Presion: 74
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 3158, Presion: 131
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 0, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 33, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
+ECG: 1251, Presion: 0
+⚠️  Frecuencia de compresiones: 12.0 cpm
+🚨 Frecuencia fuera de rango. LED ENCENDIDO
