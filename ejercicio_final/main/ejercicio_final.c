@@ -157,12 +157,12 @@ void app_main(void) {
     ESP_ERROR_CHECK(nvs_flash_init());
 
     esp_pm_config_esp32_t pm_config = {
-        .max_freq_mhz = 160, // Cambia a 160 o 240 para otras pruebas
-        .min_freq_mhz = 160,
+        .max_freq_mhz = 80, // Cambia a 160 o 240 para otras pruebas
+        .min_freq_mhz = 80,
         .light_sleep_enable = false
     };
     ESP_ERROR_CHECK(esp_pm_configure(&pm_config));
-    vTaskDelay(200 / portTICK_PERIOD_MS);  // da tiempo a que la frecuencia se estabilice
+    vTaskDelay(2000 / portTICK_PERIOD_MS);  // da tiempo a que la frecuencia se estabilice
 
     if (init_camera() != ESP_OK) {
         ESP_LOGE(TAG, "Camera init failed");

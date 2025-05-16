@@ -1,0 +1,21 @@
+Command: make -j 10 all
+CMake Deprecation Warning at /Users/sofiacastelli/esp/idf/esp-idf/components/mbedtls/mbedtls/CMakeLists.txt:21 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c: In function 'app_main':
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:159:5: warning: 'esp_pm_config_esp32_t' is deprecated: please use esp_pm_config_t instead [-Wdeprecated-declarations]
+  159 |     esp_pm_config_esp32_t pm_config = {
+      |     ^~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:10:
+/Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_pm.h:22:9: note: declared here
+   22 | typedef struct {
+      |         ^~~~~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:172:10: warning: unused variable 'images_exported' [-Wunused-variable]
+  172 |     bool images_exported = false;  // Para evitar exportar más de una vez
+      |          ^~~~~~~~~~~~~~~
