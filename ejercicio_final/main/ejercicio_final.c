@@ -1,0 +1,200 @@
+#include <esp_log.h>
+#include <esp_system.h>
+#include <nvs_flash.h>
+#include <string.h>
+#include <sys/time.h>
+#include <sys/stat.h>
+#include <stdio.h>
+
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "esp_camera.h"
+#include "esp_vfs.h"
+#include "esp_spiffs.h"
+
+#ifndef portTICK_RATE_MS
+#define portTICK_RATE_MS portTICK_PERIOD_MS
+#endif
+
+#define MAX_IMAGES 20
+#define WIDTH 96
+#define HEIGHT 96
+
+uint8_t *image_buffer[MAX_IMAGES];
+int image_index = 0;
+int image_count = 0;
+
+static const char *TAG = "Final";
+
+// Pines ESP32CAM
+#define CAM_PIN_PWDN 32
+#define CAM_PIN_RESET -1
+#define CAM_PIN_XCLK 0
+#define CAM_PIN_SIOD 26
+#define CAM_PIN_SIOC 27
+#define CAM_PIN_D7 35
+#define CAM_PIN_D6 34
+#define CAM_PIN_D5 39
+#define CAM_PIN_D4 36
+#define CAM_PIN_D3 21
+#define CAM_PIN_D2 19
+#define CAM_PIN_D1 18
+#define CAM_PIN_D0 5
+#define CAM_PIN_VSYNC 25
+#define CAM_PIN_HREF 23
+#define CAM_PIN_PCLK 22
+
+static camera_config_t camera_config = {
+    .pin_pwdn = CAM_PIN_PWDN,
+    .pin_reset = CAM_PIN_RESET,
+    .pin_xclk = CAM_PIN_XCLK,
+    .pin_sccb_sda = CAM_PIN_SIOD,
+    .pin_sccb_scl = CAM_PIN_SIOC,
+    .pin_d7 = CAM_PIN_D7,
+    .pin_d6 = CAM_PIN_D6,
+    .pin_d5 = CAM_PIN_D5,
+    .pin_d4 = CAM_PIN_D4,
+    .pin_d3 = CAM_PIN_D3,
+    .pin_d2 = CAM_PIN_D2,
+    .pin_d1 = CAM_PIN_D1,
+    .pin_d0 = CAM_PIN_D0,
+    .pin_vsync = CAM_PIN_VSYNC,
+    .pin_href = CAM_PIN_HREF,
+    .pin_pclk = CAM_PIN_PCLK,
+    .xclk_freq_hz = 20000000,
+    .ledc_timer = LEDC_TIMER_0,
+    .ledc_channel = LEDC_CHANNEL_0,
+    .pixel_format = PIXFORMAT_GRAYSCALE,
+    .frame_size = FRAMESIZE_96X96,
+    .jpeg_quality = 12,
+    .fb_count = 1,
+    .fb_location = CAMERA_FB_IN_DRAM,
+    .grab_mode = CAMERA_GRAB_WHEN_EMPTY,
+};
+
+esp_err_t init_camera(void) {
+    return esp_camera_init(&camera_config);
+}
+
+void init_spiffs() {
+    esp_vfs_spiffs_conf_t conf = {
+        .base_path = "/spiffs",
+        .partition_label = NULL,
+        .max_files = 5,
+        .format_if_mount_failed = true
+    };
+    ESP_ERROR_CHECK(esp_vfs_spiffs_register(&conf));
+    ESP_LOGI(TAG, "SPIFFS initialized");
+}
+
+void save_image_pgm(uint8_t* img, int index) {
+    char path[64];
+    snprintf(path, sizeof(path), "/spiffs/image_%02d.pgm", index);
+    FILE* f = fopen(path, "w");
+    if (!f) {
+        ESP_LOGE(TAG, "Failed to open %s", path);
+        return;
+    }
+    fprintf(f, "P2\n96 96\n255\n");
+    for (int i = 0; i < WIDTH * HEIGHT; i++) {
+        fprintf(f, "%d\n", img[i]);
+    }
+    fclose(f);
+    ESP_LOGI(TAG, "Saved %s", path);
+}
+
+void histogram_equalization(uint8_t *buf, size_t len) {
+    uint32_t hist[256] = {0};
+    for (size_t i = 0; i < len; i++) hist[buf[i]]++;
+    uint32_t cdf[256] = {0};
+    cdf[0] = hist[0];
+    for (int i = 1; i < 256; i++) cdf[i] = cdf[i - 1] + hist[i];
+    uint32_t cdf_min = 0;
+    for (int i = 0; i < 256; i++) {
+        if (cdf[i] != 0) {
+            cdf_min = cdf[i];
+            break;
+        }
+    }
+    uint8_t lut[256];
+    for (int i = 0; i < 256; i++) {
+        lut[i] = (uint8_t)(((float)(cdf[i] - cdf_min) / (len - cdf_min)) * 255);
+    }
+    for (size_t i = 0; i < len; i++) {
+        buf[i] = lut[buf[i]];
+    }
+}
+
+void sobel_filter(uint8_t *in, uint8_t *out, int width, int height) {
+    for (int y = 1; y < height - 1; y++) {
+        for (int x = 1; x < width - 1; x++) {
+            int gx = -in[(y - 1) * width + (x - 1)] - 2 * in[y * width + (x - 1)] - in[(y + 1) * width + (x - 1)]
+                     + in[(y - 1) * width + (x + 1)] + 2 * in[y * width + (x + 1)] + in[(y + 1) * width + (x + 1)];
+            int gy = -in[(y - 1) * width + (x - 1)] - 2 * in[(y - 1) * width + x] - in[(y - 1) * width + (x + 1)]
+                     + in[(y + 1) * width + (x - 1)] + 2 * in[(y + 1) * width + x] + in[(y + 1) * width + (x + 1)];
+            int magnitude = abs(gx) + abs(gy);
+            if (magnitude > 255) magnitude = 255;
+            out[y * width + x] = magnitude;
+        }
+    }
+}
+
+void app_main(void) {
+    ESP_ERROR_CHECK(nvs_flash_init());
+    init_spiffs();
+    if (init_camera() != ESP_OK) {
+        ESP_LOGE(TAG, "Camera init failed");
+        return;
+    }
+
+    int frames = 0;
+    int64_t t_start = esp_timer_get_time();
+
+    while (1) {
+        int64_t t0 = esp_timer_get_time();
+        camera_fb_t *pic = esp_camera_fb_get();
+        int64_t t1 = esp_timer_get_time();
+
+        if (!pic) {
+            ESP_LOGE(TAG, "Failed to capture image");
+            continue;
+        }
+
+        uint8_t *temp_img = malloc(pic->len);
+        memcpy(temp_img, pic->buf, pic->len);
+
+        int64_t t2 = esp_timer_get_time();
+        histogram_equalization(temp_img, pic->len);
+        int64_t t3 = esp_timer_get_time();
+
+        uint8_t *sobel_img = malloc(pic->len);
+        memset(sobel_img, 0, pic->len);
+        sobel_filter(temp_img, sobel_img, WIDTH, HEIGHT);
+        int64_t t4 = esp_timer_get_time();
+
+        if (image_buffer[image_index]) {
+            free(image_buffer[image_index]);
+        }
+        image_buffer[image_index] = sobel_img;
+        save_image_pgm(sobel_img, image_index);
+        image_index = (image_index + 1) % MAX_IMAGES;
+        if (image_count < MAX_IMAGES) image_count++;
+
+        free(temp_img);
+        esp_camera_fb_return(pic);
+
+        int64_t t5 = esp_timer_get_time();
+        ESP_LOGI(TAG, "Capture: %lld ms, Eq: %lld ms, Sobel: %lld ms, Store: %lld ms",
+                 (t1 - t0) / 1000, (t3 - t2) / 1000, (t4 - t3) / 1000, (t5 - t4) / 1000);
+
+        frames++;
+        int64_t elapsed = esp_timer_get_time() - t_start;
+        if (elapsed >= 1000000) {
+            ESP_LOGI(TAG, "FPS: %d", frames);
+            frames = 0;
+            t_start = esp_timer_get_time();
+        }
+
+        vTaskDelay(10 / portTICK_RATE_MS);
+    }
+}
