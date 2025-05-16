@@ -4,6 +4,13 @@
 #include <string.h>
 #include <stdlib.h>
 #include <sys/time.h>
+#include "esp_timer.h"
+
+#include "esp_private/esp_clk.h"
+#include "esp_pm.h"
+
+#include "esp_spiffs.h"
+#include "esp_vfs.h"
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -110,16 +117,52 @@ void sobel_filter(uint8_t *in, uint8_t *out, int width, int height) {
     }
 }
 
-void export_image_uart(uint8_t* img, int width, int height, int id) {
-    printf("START_IMAGE_%d\n", id);  // Marca de inicio
-    for (int i = 0; i < width * height; i++) {
-        printf("%d,", img[i]);
+void export_image_to_file(uint8_t* img, int width, int height, int id) {
+    char filename[32];
+    snprintf(filename, sizeof(filename), "/spiffs/image_%d.txt", id);
+    FILE *f = fopen(filename, "w");
+    if (f == NULL) {
+        ESP_LOGE(TAG, "Failed to open file for writing: %s", filename);
+        return;
     }
-    printf("\nEND_IMAGE_%d\n", id);  // Marca de fin
+
+    fprintf(f, "START_IMAGE_%d\n", id);
+    for (int i = 0; i < width * height; i++) {
+        fprintf(f, "%d,", img[i]);
+    }
+    fprintf(f, "\nEND_IMAGE_%d\n", id);
+    fclose(f);
+
+    ESP_LOGI(TAG, "Imagen %d guardada en %s", id, filename);
 }
+
+void print_spiffs_file(const char *filename) {
+    FILE *f = fopen(filename, "r");
+    if (!f) {
+        ESP_LOGE(TAG, "No se pudo abrir %s", filename);
+        return;
+    }
+
+    printf("START_FILE:%s\n", filename);
+    char line[128];
+    while (fgets(line, sizeof(line), f)) {
+        printf("%s", line);
+    }
+    printf("END_FILE:%s\n", filename);
+    fclose(f);
+}
+
 
 void app_main(void) {
     ESP_ERROR_CHECK(nvs_flash_init());
+
+    esp_pm_config_esp32_t pm_config = {
+        .max_freq_mhz = 160, // Cambia a 160 o 240 para otras pruebas
+        .min_freq_mhz = 160,
+        .light_sleep_enable = false
+    };
+    ESP_ERROR_CHECK(esp_pm_configure(&pm_config));
+    vTaskDelay(200 / portTICK_PERIOD_MS);  // da tiempo a que la frecuencia se estabilice
 
     if (init_camera() != ESP_OK) {
         ESP_LOGE(TAG, "Camera init failed");
@@ -127,44 +170,85 @@ void app_main(void) {
     }
 
     bool images_exported = false;  // Para evitar exportar más de una vez
+    esp_vfs_spiffs_conf_t conf = {
+        .base_path = "/spiffs",
+        .partition_label = NULL,
+        .max_files = 5,
+        .format_if_mount_failed = true
+    };
+    
+    esp_err_t ret = esp_vfs_spiffs_register(&conf);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to mount or format filesystem");
+        return;
+    }
+    int64_t t_start, t_capture, t_equalize, t_sobel, t_save, t_end;
 
     while (1) {
+        t_start = esp_timer_get_time();
         camera_fb_t *pic = esp_camera_fb_get();
+        t_capture = esp_timer_get_time();
         if (!pic) {
             ESP_LOGE(TAG, "Failed to capture image");
             continue;
         }
-
+    
         uint8_t *temp = malloc(pic->len);
         memcpy(temp, pic->buf, pic->len);
         histogram_equalization(temp, pic->len);
-
+        t_equalize = esp_timer_get_time();
+    
         uint8_t *sobel_img = malloc(pic->len);
         memset(sobel_img, 0, pic->len);
         sobel_filter(temp, sobel_img, WIDTH, HEIGHT);
-
-        // Reemplazar imagen si ya existe
+        t_sobel = esp_timer_get_time();
+    
+        // Guardar imagen en buffer circular
         if (image_buffer[image_index]) {
             free(image_buffer[image_index]);
         }
-
         image_buffer[image_index] = sobel_img;
-        image_index = (image_index + 1) % MAX_IMAGES;
-        if (image_count < MAX_IMAGES) image_count++;
+    
+        // Borrar imagen antigua en SPIFFS si ya hay 20
+        if (image_count >= MAX_IMAGES) {
+            char old_filename[32];
+            int oldest = image_index;
+            snprintf(old_filename, sizeof(old_filename), "/spiffs/image_%d.txt", oldest);
+            remove(old_filename);
+        } else {
+            image_count++;
+        }
+    
+        export_image_to_file(sobel_img, WIDTH, HEIGHT, image_index);  
+        t_save = esp_timer_get_time();
 
+        if (image_count % 10 == 0) {
+            for (int i = 0; i < 10; i++) {
+                char filename[32];
+                snprintf(filename, sizeof(filename), "/spiffs/image_%d.txt", i);
+                print_spiffs_file(filename);
+                vTaskDelay(500 / portTICK_PERIOD_MS);
+            }
+        }
+      
+    
         esp_camera_fb_return(pic);
         free(temp);
-
+        image_index = (image_index + 1) % MAX_IMAGES;
+    
+        t_end = esp_timer_get_time();
+    
+        // Imprimir tiempos en microsegundos (us)
+        printf("TIME_LOG: capture=%lld, equalize=%lld, sobel=%lld, save=%lld, total=%lld\n",
+            t_capture - t_start,
+            t_equalize - t_capture,
+            t_sobel - t_equalize,
+            t_save - t_sobel,
+            t_end - t_start
+        );
+    
         ESP_LOGI(TAG, "Imagen procesada y almacenada (%d/%d)", image_count, MAX_IMAGES);
-
-        if (image_count >= 5 && !images_exported) {
-            for (int i = 0; i < 5; i++) {
-                export_image_uart(image_buffer[i], WIDTH, HEIGHT, i);
-                vTaskDelay(200 / portTICK_PERIOD_MS);  // Pausa para no saturar UART
-            }
-            images_exported = true;
-        }
-
+    
         vTaskDelay(1000 / portTICK_PERIOD_MS);  // 1 segundo entre capturas
     }
 }

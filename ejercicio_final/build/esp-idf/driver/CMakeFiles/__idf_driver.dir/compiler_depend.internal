@@ -215,6 +215,7 @@ esp-idf/driver/CMakeFiles/__idf_driver.dir/deprecated/adc_i2s_deprecated.c.obj
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_intr_types.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_memory_utils.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/spinlock.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_pm.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/include/esp_rom_sys.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/include/esp_private/crosscore_int.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/include/esp_system.h

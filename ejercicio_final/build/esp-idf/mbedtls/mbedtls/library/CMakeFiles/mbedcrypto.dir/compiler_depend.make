@@ -524,6 +524,7 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/Users/sofiacastelli/es
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_memory_utils.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_private/periph_ctrl.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/spinlock.h \
+  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_pm.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/include/esp_rom_sys.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/include/esp_private/crosscore_int.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/include/esp_system.h \
@@ -8849,6 +8850,8 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/version_features.c.obj
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/mbedtls/mbedtls/library/sha1.c:
 
+/Users/sofiacastelli/esp/idf/esp-idf/components/mbedtls/mbedtls/library/rsa_alt_helpers.c:
+
 /Users/sofiacastelli/esp/idf/esp-idf/components/mbedtls/mbedtls/library/psa_crypto_driver_wrappers.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/mbedtls/mbedtls/library/rsa_alt_helpers.h:
@@ -8906,6 +8909,8 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/version_features.c.obj
 /Users/sofiacastelli/esp/idf/esp-idf/components/mbedtls/mbedtls/include/mbedtls/threading.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/mbedtls/mbedtls/include/mbedtls/config_adjust_legacy_crypto.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_pm.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/mbedtls/mbedtls/library/psa_crypto.c:
 
@@ -9181,6 +9186,10 @@ config/sdkconfig.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/mbedtls/port/sha/parallel_engine/esp_sha256.c:
 
+/Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/timespec.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/include/esp_rom_md5.h:
+
 /Users/sofiacastelli/esp/idf/esp-idf/components/mbedtls/port/md/esp_md.c:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/time.h:
@@ -9372,10 +9381,6 @@ config/sdkconfig.h:
 /Users/sofiacastelli/esp/idf/esp-idf/components/mbedtls/mbedtls/library/block_cipher_internal.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/reset_reasons.h:
-
-/Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/timespec.h:
-
-/Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/include/esp_rom_md5.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/periph_defs.h:
 
@@ -9586,8 +9591,6 @@ config/sdkconfig.h:
 /Users/sofiacastelli/esp/idf/esp-idf/components/mbedtls/port/include/mbedtls/bignum.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/log/include/esp_log_level.h:
-
-/Users/sofiacastelli/esp/idf/esp-idf/components/mbedtls/mbedtls/library/rsa_alt_helpers.c:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/mbedtls/port/include/sha256_alt.h:
 

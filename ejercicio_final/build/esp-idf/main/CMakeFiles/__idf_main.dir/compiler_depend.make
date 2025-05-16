@@ -17,6 +17,7 @@ esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj: /Users/sofiacastel
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/_newlib_version.h \
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/alloca.h \
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/assert.h \
+  /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/dirent.h \
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/inttypes.h \
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/limits.h \
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/machine/_default_types.h \
@@ -46,19 +47,24 @@ esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj: /Users/sofiacastel
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/_types.h \
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/cdefs.h \
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/config.h \
+  /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/dirent.h \
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/features.h \
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/lock.h \
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/reent.h \
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/sched.h \
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/select.h \
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/signal.h \
+  /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/stat.h \
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/stdio.h \
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/string.h \
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/syslimits.h \
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/time.h \
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/timespec.h \
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/types.h \
+  /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/unistd.h \
   /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/time.h \
+  /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/unistd.h \
+  /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/utime.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_common/include/esp_assert.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_common/include/esp_attr.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_common/include/esp_bit_defs.h \
@@ -74,12 +80,15 @@ esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj: /Users/sofiacastel
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_intr_alloc.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_intr_types.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_memory_utils.h \
+  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_private/esp_clk.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/spinlock.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_partition/include/esp_partition.h \
+  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_pm.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/include/esp_rom_gpio.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/include/esp_rom_sys.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/include/esp_private/crosscore_int.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/include/esp_system.h \
+  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_timer/include/esp_timer.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/deprecated_definitions.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/event_groups.h \
@@ -113,10 +122,15 @@ esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj: /Users/sofiacastel
   /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/assert.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/esp_newlib.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/stdio.h \
+  /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/dirent.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/lock.h \
+  /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/poll.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/reent.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/select.h \
+  /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/termios.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/time.h \
+  /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/unistd.h \
+  /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/utime.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/time.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/nvs_flash/include/nvs.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/nvs_flash/include/nvs_flash.h \
@@ -128,6 +142,9 @@ esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj: /Users/sofiacastel
   /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/soc.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/soc_caps.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/reg_base.h \
+  /Users/sofiacastelli/esp/idf/esp-idf/components/spiffs/include/esp_spiffs.h \
+  /Users/sofiacastelli/esp/idf/esp-idf/components/vfs/include/esp_vfs.h \
+  /Users/sofiacastelli/esp/idf/esp-idf/components/vfs/include/esp_vfs_ops.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/xtensa/esp32/include/xtensa/config/core-isa.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/xtensa/esp32/include/xtensa/config/core.h \
@@ -168,9 +185,9 @@ esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj: /Users/sofiacastel
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/xtensa/esp32/include/xtensa/config/core-isa.h:
 
-/Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/reg_base.h:
+/Users/sofiacastelli/esp/idf/esp-idf/components/vfs/include/esp_vfs.h:
 
-/Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/soc.h:
+/Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/reg_base.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/reset_reasons.h:
 
@@ -198,6 +215,10 @@ esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj: /Users/sofiacastel
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/log/include/esp_log_color.h:
 
+/Users/sofiacastelli/esp/idf/esp-idf/components/vfs/include/esp_vfs_ops.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/spiffs/include/esp_spiffs.h:
+
 /Users/sofiacastelli/esp/idf/esp-idf/components/heap/include/multi_heap.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/hal/include/hal/ledc_types.h:
@@ -208,11 +229,23 @@ esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj: /Users/sofiacastel
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/esp_additions/include/freertos/idf_additions.h:
 
-/Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portbenchmark.h:
-
 /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/config/include/freertos/FreeRTOSConfig.h:
 
+/Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/poll.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portbenchmark.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/timers.h:
+
 /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/task.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/utime.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/stream_buffer.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/termios.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/semphr.h:
 
 /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/stddef.h:
 
@@ -222,27 +255,15 @@ esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj: /Users/sofiacastel
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/list.h:
 
-/Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/event_groups.h:
-
 /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h:
-
-/Users/sofiacastelli/esp/idf/esp-idf/components/xtensa/include/xtensa/hal.h:
-
-/Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/message_buffer.h:
-
-/Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/include/esp_system.h:
-
-/Users/sofiacastelli/esp/idf/esp-idf/components/esp_common/include/esp_macros.h:
-
-/Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/reent.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/include/esp_private/crosscore_int.h:
 
-/Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/timers.h:
-
 /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/spinlock.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_private/esp_clk.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_memory_utils.h:
 
@@ -250,11 +271,11 @@ esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj: /Users/sofiacastel
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_etm.h:
 
-/Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/semphr.h:
-
 /Users/sofiacastelli/esp/idf/esp-idf/components/esp_driver_ledc/include/driver/ledc.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/esp_driver_gpio/include/driver/gpio_etm.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/dirent.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/esp_driver_gpio/include/driver/gpio.h:
 
@@ -264,6 +285,22 @@ esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj: /Users/sofiacastel
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/esp_common/include/esp_bit_defs.h:
 
+/Users/sofiacastelli/esp/idf/esp-idf/components/xtensa/include/xtensa/hal.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/message_buffer.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/include/esp_system.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/soc.h:
+
+/Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/utime.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/event_groups.h:
+
+/Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/unistd.h:
+
+/Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/unistd.h:
+
 /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/time.h:
 
 /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/types.h:
@@ -271,6 +308,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj: /Users/sofiacastel
 /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/alloca.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_cpu.h:
+
+/Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/dirent.h:
 
 /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/timespec.h:
 
@@ -284,9 +323,11 @@ esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj: /Users/sofiacastel
 
 /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/select.h:
 
-/Users/sofiacastelli/esp/idf/esp-idf/components/xtensa/esp32/include/xtensa/config/tie.h:
+/Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/_timeval.h:
 
-/Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/machine/endian.h:
+/Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/stdio.h:
+
+/Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/features.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/xtensa/include/xtensa/xtruntime-frames.h:
 
@@ -294,23 +335,27 @@ esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj: /Users/sofiacastel
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/time.h:
 
-/Users/sofiacastelli/esp/idf/esp-idf/components/esp_common/include/esp_compiler.h:
-
 /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/lock.h:
 
-/Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/_timeval.h:
+/Users/sofiacastelli/esp/idf/esp-idf/components/esp_common/include/esp_compiler.h:
 
-/Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/stdio.h:
-
-/Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/features.h:
+/Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/unistd.h:
 
 /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/_sigset.h:
 
 /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/config.h:
 
+/Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/interrupts.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/esp_common/include/esp_idf_version.h:
+
+/Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/stat.h:
+
 /Users/sofiacastelli/esp/idf/esp-idf/components/xtensa/esp32/include/xtensa/config/extreg.h:
 
 /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/_pthreadtypes.h:
+
+/Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/dirent.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/hal/include/hal/gpio_types.h:
 
@@ -352,23 +397,31 @@ esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj: /Users/sofiacastel
 
 /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/machine/types.h:
 
+/Users/sofiacastelli/esp/idf/esp-idf/components/xtensa/esp32/include/xtensa/config/tie.h:
+
+/Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/machine/endian.h:
+
 /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/_intsup.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_intr_types.h:
 
 /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/machine/_time.h:
 
-/Users/sofiacastelli/esp/idf/esp-idf/components/log/include/esp_log_write.h:
-
-/Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/machine/_default_types.h:
-
-/Users/sofiacastelli/esp/idf/esp-idf/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h:
-
 /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/machine/_endian.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/esp_common/include/esp_macros.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/heap/include/esp_heap_caps.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/esp_common/include/esp_attr.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/log/include/esp_log_write.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h:
+
+/Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/machine/_default_types.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/stdio.h:
 
@@ -386,6 +439,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj: /Users/sofiacastel
 
 /Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/components/esp32-camera/conversions/include/esp_jpg_decode.h:
 
+/Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_pm.h:
+
 /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/limits.h:
 
 /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/stdint.h:
@@ -393,6 +448,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj: /Users/sofiacastel
 /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/include/esp_rom_gpio.h:
 
 /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/inttypes.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/esp_timer/include/esp_timer.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/include/esp_rom_sys.h:
 
@@ -423,12 +480,6 @@ config/sdkconfig.h:
 /Users/sofiacastelli/esp/idf/esp-idf/components/xtensa/include/xtensa/xtruntime-core-state.h:
 
 /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/limits.h:
-
-/Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/interrupts.h:
-
-/Users/sofiacastelli/esp/idf/esp-idf/components/esp_common/include/esp_idf_version.h:
-
-/Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/stream_buffer.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/select.h:
 

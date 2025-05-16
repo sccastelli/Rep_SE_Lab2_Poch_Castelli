@@ -530,6 +530,7 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/Users/sofiacastelli/es
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_memory_utils.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_private/periph_ctrl.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/spinlock.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_pm.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/include/esp_rom_sys.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/include/esp_private/crosscore_int.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/include/esp_system.h

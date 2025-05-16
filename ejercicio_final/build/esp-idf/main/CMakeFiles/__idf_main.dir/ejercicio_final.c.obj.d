@@ -76,6 +76,17 @@ esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj: \
  /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/signal.h \
  /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/signal.h \
  /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/machine/_time.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_timer/include/esp_timer.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_etm.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_private/esp_clk.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_pm.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/spiffs/include/esp_spiffs.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/vfs/include/esp_vfs.h \
+ /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/unistd.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/unistd.h \
+ /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/unistd.h \
+ /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/utime.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/utime.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/config/include/freertos/FreeRTOSConfig.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h \
@@ -136,6 +147,13 @@ esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj: \
  /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/stream_buffer.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/event_groups.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/timers.h \
+ /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/stat.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/termios.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/poll.h \
+ /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/dirent.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/dirent.h \
+ /Users/sofiacastelli/esp/idf-tools/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/dirent.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/vfs/include/esp_vfs_ops.h \
  /Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/components/esp32-camera/driver/include/esp_camera.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_driver_ledc/include/driver/ledc.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/hal/include/hal/ledc_types.h \
@@ -146,7 +164,6 @@ esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj: \
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/include/esp_rom_gpio.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/gpio_pins.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_driver_gpio/include/driver/gpio_etm.h \
- /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_etm.h \
  /Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/components/esp32-camera/driver/include/sensor.h \
  /Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/components/esp32-camera/conversions/include/img_converters.h \
  /Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/components/esp32-camera/conversions/include/esp_jpg_decode.h

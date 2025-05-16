@@ -156,6 +156,15 @@ esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/startup_funcs.c.obj: \
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/uart_struct.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/dport_reg.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/dport_access.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_pm.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_private/pm_impl.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/port/esp32/include/soc/rtc.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/include/soc/rtc_periph.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/include/soc/rtc_io_periph.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/rtc_io_channel.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/io_mux_reg.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_timer/include/esp_timer.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_etm.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_private/esp_clk.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/spi_flash/include/esp_private/spi_flash_os.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/include/esp_rom_spiflash.h \

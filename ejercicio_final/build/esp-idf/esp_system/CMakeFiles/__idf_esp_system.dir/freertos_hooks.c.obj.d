@@ -103,4 +103,17 @@ esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/freertos_hooks.c.obj: \
  /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/event_groups.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/timers.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/include/esp_freertos_hooks.h \
- /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_pm.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_private/pm_impl.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/port/esp32/include/soc/rtc.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/include/soc/rtc_periph.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/include/soc/rtc_io_periph.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/rtc_io_channel.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/io_mux_reg.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/include/soc/rtc_cntl_periph.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/rtc_cntl_reg.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/rtc_cntl_struct.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/clk_tree_defs.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_timer/include/esp_timer.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_etm.h

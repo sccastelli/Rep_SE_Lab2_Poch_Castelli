@@ -74,6 +74,7 @@ esp-idf/driver/CMakeFiles/__idf_driver.dir/deprecated/adc_i2s_deprecated.c.obj: 
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/sens_reg.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/syscon_struct.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/rtc_cntl_struct.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_pm.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/config/include/freertos/FreeRTOSConfig.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h \

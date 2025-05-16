@@ -471,14 +471,19 @@ esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/freertos_hooks.c.obj
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_common/include/esp_idf_version.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_common/include/esp_macros.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_cpu.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_etm.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_intr_alloc.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_intr_types.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_memory_utils.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/spinlock.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/port/esp32/include/soc/rtc.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_pm.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_private/pm_impl.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/include/esp_rom_sys.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/include/esp_freertos_hooks.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/include/esp_private/crosscore_int.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/include/esp_system.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_timer/include/esp_timer.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/deprecated_definitions.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/event_groups.h
@@ -504,11 +509,19 @@ esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/freertos_hooks.c.obj
  /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/stdio.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/lock.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/platform_include/sys/reent.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/clk_tree_defs.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/interrupts.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/reset_reasons.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/rtc_io_channel.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/soc.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/soc_caps.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/io_mux_reg.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/reg_base.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/rtc_cntl_reg.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/rtc_cntl_struct.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/include/soc/rtc_cntl_periph.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/include/soc/rtc_io_periph.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/include/soc/rtc_periph.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/xtensa/esp32/include/xtensa/config/core-isa.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/xtensa/esp32/include/xtensa/config/core-matmap.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/xtensa/esp32/include/xtensa/config/core.h
@@ -2406,6 +2419,7 @@ esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/startup_funcs.c.obj
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_common/include/esp_macros.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_common/include/esp_types.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_cpu.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_etm.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_intr_alloc.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_intr_types.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_memory_utils.h
@@ -2413,8 +2427,11 @@ esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/startup_funcs.c.obj
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_private/periph_ctrl.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_private/spi_share_hw_ctrl.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/spinlock.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/port/esp32/include/soc/rtc.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/power_supply/include/esp_private/brownout.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/power_supply/include/esp_private/vbat.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_pm.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_private/pm_impl.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/esp32/esp_rom_caps.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/include/esp_rom_spiflash.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/include/esp_rom_spiflash_defs.h
@@ -2423,6 +2440,7 @@ esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/startup_funcs.c.obj
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/include/esp_private/startup_internal.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/include/esp_system.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/include/esp_xt_wdt.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_timer/include/esp_timer.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/deprecated_definitions.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/event_groups.h
@@ -2479,11 +2497,13 @@ esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/startup_funcs.c.obj
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/interrupts.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/periph_defs.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/reset_reasons.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/rtc_io_channel.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/soc.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/soc_caps.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/spi_pins.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/dport_reg.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/gpio_struct.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/io_mux_reg.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/reg_base.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/rtc_cntl_reg.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/rtc_cntl_struct.h
@@ -2495,6 +2515,8 @@ esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/startup_funcs.c.obj
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/register/soc/uart_struct.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/include/soc/regdma.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/include/soc/rtc_cntl_periph.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/include/soc/rtc_io_periph.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/soc/include/soc/rtc_periph.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/include/soc/spi_periph.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/include/soc/wdt_periph.h
  /Users/sofiacastelli/esp/idf/esp-idf/components/spi_flash/include/esp_flash.h

@@ -1,0 +1,12 @@
+Command: make -j 10 all
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c: In function 'app_main':
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:159:5: warning: 'esp_pm_config_esp32_t' is deprecated: please use esp_pm_config_t instead [-Wdeprecated-declarations]
+  159 |     esp_pm_config_esp32_t pm_config = {
+      |     ^~~~~~~~~~~~~~~~~~~~~
+In file included from /Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:10:
+/Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_pm.h:22:9: note: declared here
+   22 | typedef struct {
+      |         ^~~~~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:171:10: warning: unused variable 'images_exported' [-Wunused-variable]
+  171 |     bool images_exported = false;  // Para evitar exportar más de una vez
+      |          ^~~~~~~~~~~~~~~

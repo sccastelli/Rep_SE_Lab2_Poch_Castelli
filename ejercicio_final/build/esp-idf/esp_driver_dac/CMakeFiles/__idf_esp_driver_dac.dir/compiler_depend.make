@@ -183,6 +183,7 @@ esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/dac_continuous.c.obj:
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_intr_types.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_memory_utils.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/spinlock.h \
+  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_pm.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/esp32/include/esp32/rom/lldesc.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/include/esp_rom_lldesc.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/include/esp_rom_sys.h \
@@ -309,6 +310,7 @@ esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/dac_cosine.c.obj: /Us
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_private/periph_ctrl.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_private/regi2c_ctrl.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/spinlock.h \
+  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_pm.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/esp32/include/esp32/rom/ets_sys.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/esp32/include/esp32/rom/rtc.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/include/esp_rom_regi2c.h \
@@ -446,6 +448,7 @@ esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/dac_oneshot.c.obj: /U
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_intr_types.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_memory_utils.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/spinlock.h \
+  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_pm.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/include/esp_rom_sys.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/include/esp_private/crosscore_int.h \
   /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/include/esp_system.h \
@@ -709,6 +712,8 @@ esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/esp32/dac_dma.c.obj: 
 /Users/sofiacastelli/esp/idf/esp-idf/components/hal/include/hal/adc_types.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/esp_rom/esp32/include/esp32/rom/lldesc.h:
+
+/Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_pm.h:
 
 /Users/sofiacastelli/esp/idf/esp-idf/components/esp_driver_dac/include/driver/dac_continuous.h:
 

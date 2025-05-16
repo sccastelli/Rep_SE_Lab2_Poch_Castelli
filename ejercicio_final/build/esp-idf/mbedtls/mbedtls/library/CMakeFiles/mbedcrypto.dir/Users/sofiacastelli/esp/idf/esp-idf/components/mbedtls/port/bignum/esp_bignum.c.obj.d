@@ -65,6 +65,7 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/Users/sofiacastelli/es
  /Users/sofiacastelli/esp/idf/esp-idf/components/log/include/esp_log_format.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_intr_alloc.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_intr_types.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_pm.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/esp_hw_support/include/esp_private/periph_ctrl.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/soc/esp32/include/soc/periph_defs.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h \

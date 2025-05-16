@@ -1,0 +1,5 @@
+Command: make -j 10 all
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c: In function 'app_main':
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:161:10: warning: unused variable 'images_exported' [-Wunused-variable]
+  161 |     bool images_exported = false;  // Para evitar exportar más de una vez
+      |          ^~~~~~~~~~~~~~~

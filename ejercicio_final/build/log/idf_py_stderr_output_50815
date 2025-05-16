@@ -1,9 +1,0 @@
-Command: make -j 10 all
-/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c: In function 'app_main':
-/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:151:23: error: implicit declaration of function 'esp_timer_get_time'; did you mean 'timer_gettime'? [-Wimplicit-function-declaration]
-  151 |     int64_t t_start = esp_timer_get_time();
-      |                       ^~~~~~~~~~~~~~~~~~
-      |                       timer_gettime
-make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj] Error 1
-make[1]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
-make: *** [all] Error 2

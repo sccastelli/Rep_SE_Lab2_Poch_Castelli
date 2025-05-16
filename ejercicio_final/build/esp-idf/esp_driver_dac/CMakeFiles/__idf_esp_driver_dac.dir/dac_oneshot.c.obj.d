@@ -124,4 +124,5 @@ esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/dac_oneshot.c.obj: \
  /Users/sofiacastelli/esp/idf/esp-idf/components/log/include/esp_log_buffer.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/log/include/esp_log_timestamp.h \
  /Users/sofiacastelli/esp/idf/esp-idf/components/log/include/esp_log_write.h \
- /Users/sofiacastelli/esp/idf/esp-idf/components/log/include/esp_log_format.h
+ /Users/sofiacastelli/esp/idf/esp-idf/components/log/include/esp_log_format.h \
+ /Users/sofiacastelli/esp/idf/esp-idf/components/esp_pm/include/esp_pm.h
