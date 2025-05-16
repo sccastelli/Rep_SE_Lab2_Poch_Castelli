@@ -2,31 +2,17 @@
 #include <esp_system.h>
 #include <nvs_flash.h>
 #include <string.h>
+#include <stdlib.h>
 #include <sys/time.h>
-#include <sys/stat.h>
-#include <stdio.h>
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_camera.h"
-#include "esp_vfs.h"
-#include "esp_spiffs.h"
-
-#ifndef portTICK_RATE_MS
-#define portTICK_RATE_MS portTICK_PERIOD_MS
-#endif
 
 #define MAX_IMAGES 20
 #define WIDTH 96
 #define HEIGHT 96
 
-uint8_t *image_buffer[MAX_IMAGES];
-int image_index = 0;
-int image_count = 0;
-
-static const char *TAG = "Final";
-
-// Pines ESP32CAM
 #define CAM_PIN_PWDN 32
 #define CAM_PIN_RESET -1
 #define CAM_PIN_XCLK 0
@@ -43,6 +29,8 @@ static const char *TAG = "Final";
 #define CAM_PIN_VSYNC 25
 #define CAM_PIN_HREF 23
 #define CAM_PIN_PCLK 22
+
+static const char *TAG = "FINAL";
 
 static camera_config_t camera_config = {
     .pin_pwdn = CAM_PIN_PWDN,
@@ -72,43 +60,22 @@ static camera_config_t camera_config = {
     .grab_mode = CAMERA_GRAB_WHEN_EMPTY,
 };
 
+uint8_t *image_buffer[MAX_IMAGES] = {0};
+int image_index = 0;
+int image_count = 0;
+
 esp_err_t init_camera(void) {
     return esp_camera_init(&camera_config);
-}
-
-void init_spiffs() {
-    esp_vfs_spiffs_conf_t conf = {
-        .base_path = "/spiffs",
-        .partition_label = NULL,
-        .max_files = 5,
-        .format_if_mount_failed = true
-    };
-    ESP_ERROR_CHECK(esp_vfs_spiffs_register(&conf));
-    ESP_LOGI(TAG, "SPIFFS initialized");
-}
-
-void save_image_pgm(uint8_t* img, int index) {
-    char path[64];
-    snprintf(path, sizeof(path), "/spiffs/image_%02d.pgm", index);
-    FILE* f = fopen(path, "w");
-    if (!f) {
-        ESP_LOGE(TAG, "Failed to open %s", path);
-        return;
-    }
-    fprintf(f, "P2\n96 96\n255\n");
-    for (int i = 0; i < WIDTH * HEIGHT; i++) {
-        fprintf(f, "%d\n", img[i]);
-    }
-    fclose(f);
-    ESP_LOGI(TAG, "Saved %s", path);
 }
 
 void histogram_equalization(uint8_t *buf, size_t len) {
     uint32_t hist[256] = {0};
     for (size_t i = 0; i < len; i++) hist[buf[i]]++;
+
     uint32_t cdf[256] = {0};
     cdf[0] = hist[0];
     for (int i = 1; i < 256; i++) cdf[i] = cdf[i - 1] + hist[i];
+
     uint32_t cdf_min = 0;
     for (int i = 0; i < 256; i++) {
         if (cdf[i] != 0) {
@@ -116,10 +83,12 @@ void histogram_equalization(uint8_t *buf, size_t len) {
             break;
         }
     }
+
     uint8_t lut[256];
     for (int i = 0; i < 256; i++) {
         lut[i] = (uint8_t)(((float)(cdf[i] - cdf_min) / (len - cdf_min)) * 255);
     }
+
     for (size_t i = 0; i < len; i++) {
         buf[i] = lut[buf[i]];
     }
@@ -130,8 +99,10 @@ void sobel_filter(uint8_t *in, uint8_t *out, int width, int height) {
         for (int x = 1; x < width - 1; x++) {
             int gx = -in[(y - 1) * width + (x - 1)] - 2 * in[y * width + (x - 1)] - in[(y + 1) * width + (x - 1)]
                      + in[(y - 1) * width + (x + 1)] + 2 * in[y * width + (x + 1)] + in[(y + 1) * width + (x + 1)];
+
             int gy = -in[(y - 1) * width + (x - 1)] - 2 * in[(y - 1) * width + x] - in[(y - 1) * width + (x + 1)]
                      + in[(y + 1) * width + (x - 1)] + 2 * in[(y + 1) * width + x] + in[(y + 1) * width + (x + 1)];
+
             int magnitude = abs(gx) + abs(gy);
             if (magnitude > 255) magnitude = 255;
             out[y * width + x] = magnitude;
@@ -139,62 +110,61 @@ void sobel_filter(uint8_t *in, uint8_t *out, int width, int height) {
     }
 }
 
+void export_image_uart(uint8_t* img, int width, int height, int id) {
+    printf("START_IMAGE_%d\n", id);  // Marca de inicio
+    for (int i = 0; i < width * height; i++) {
+        printf("%d,", img[i]);
+    }
+    printf("\nEND_IMAGE_%d\n", id);  // Marca de fin
+}
+
 void app_main(void) {
     ESP_ERROR_CHECK(nvs_flash_init());
-    init_spiffs();
+
     if (init_camera() != ESP_OK) {
         ESP_LOGE(TAG, "Camera init failed");
         return;
     }
 
-    int frames = 0;
-    int64_t t_start = esp_timer_get_time();
+    bool images_exported = false;  // Para evitar exportar más de una vez
 
     while (1) {
-        int64_t t0 = esp_timer_get_time();
         camera_fb_t *pic = esp_camera_fb_get();
-        int64_t t1 = esp_timer_get_time();
-
         if (!pic) {
             ESP_LOGE(TAG, "Failed to capture image");
             continue;
         }
 
-        uint8_t *temp_img = malloc(pic->len);
-        memcpy(temp_img, pic->buf, pic->len);
-
-        int64_t t2 = esp_timer_get_time();
-        histogram_equalization(temp_img, pic->len);
-        int64_t t3 = esp_timer_get_time();
+        uint8_t *temp = malloc(pic->len);
+        memcpy(temp, pic->buf, pic->len);
+        histogram_equalization(temp, pic->len);
 
         uint8_t *sobel_img = malloc(pic->len);
         memset(sobel_img, 0, pic->len);
-        sobel_filter(temp_img, sobel_img, WIDTH, HEIGHT);
-        int64_t t4 = esp_timer_get_time();
+        sobel_filter(temp, sobel_img, WIDTH, HEIGHT);
 
+        // Reemplazar imagen si ya existe
         if (image_buffer[image_index]) {
             free(image_buffer[image_index]);
         }
+
         image_buffer[image_index] = sobel_img;
-        save_image_pgm(sobel_img, image_index);
         image_index = (image_index + 1) % MAX_IMAGES;
         if (image_count < MAX_IMAGES) image_count++;
 
-        free(temp_img);
         esp_camera_fb_return(pic);
+        free(temp);
 
-        int64_t t5 = esp_timer_get_time();
-        ESP_LOGI(TAG, "Capture: %lld ms, Eq: %lld ms, Sobel: %lld ms, Store: %lld ms",
-                 (t1 - t0) / 1000, (t3 - t2) / 1000, (t4 - t3) / 1000, (t5 - t4) / 1000);
+        ESP_LOGI(TAG, "Imagen procesada y almacenada (%d/%d)", image_count, MAX_IMAGES);
 
-        frames++;
-        int64_t elapsed = esp_timer_get_time() - t_start;
-        if (elapsed >= 1000000) {
-            ESP_LOGI(TAG, "FPS: %d", frames);
-            frames = 0;
-            t_start = esp_timer_get_time();
+        if (image_count >= 5 && !images_exported) {
+            for (int i = 0; i < 5; i++) {
+                export_image_uart(image_buffer[i], WIDTH, HEIGHT, i);
+                vTaskDelay(200 / portTICK_PERIOD_MS);  // Pausa para no saturar UART
+            }
+            images_exported = true;
         }
 
-        vTaskDelay(10 / portTICK_RATE_MS);
+        vTaskDelay(1000 / portTICK_PERIOD_MS);  // 1 segundo entre capturas
     }
 }

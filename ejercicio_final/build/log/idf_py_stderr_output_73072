@@ -1,0 +1,78 @@
+Command: make -j 10 all
+CMake Deprecation Warning at /Users/sofiacastelli/esp/idf/esp-idf/components/mbedtls/mbedtls/CMakeLists.txt:21 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:209:9: warning: "CAM_PIN_PWDN" redefined
+  209 | #define CAM_PIN_PWDN 32
+      |         ^~~~~~~~~~~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:54:9: note: this is the location of the previous definition
+   54 | #define CAM_PIN_PWDN -1  //power down is not used
+      |         ^~~~~~~~~~~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:211:9: warning: "CAM_PIN_XCLK" redefined
+  211 | #define CAM_PIN_XCLK 0
+      |         ^~~~~~~~~~~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:56:9: note: this is the location of the previous definition
+   56 | #define CAM_PIN_XCLK 21
+      |         ^~~~~~~~~~~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:218:9: warning: "CAM_PIN_D3" redefined
+  218 | #define CAM_PIN_D3 21
+      |         ^~~~~~~~~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:64:9: note: this is the location of the previous definition
+   64 | #define CAM_PIN_D3 19
+      |         ^~~~~~~~~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:219:9: warning: "CAM_PIN_D2" redefined
+  219 | #define CAM_PIN_D2 19
+      |         ^~~~~~~~~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:65:9: note: this is the location of the previous definition
+   65 | #define CAM_PIN_D2 18
+      |         ^~~~~~~~~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:220:9: warning: "CAM_PIN_D1" redefined
+  220 | #define CAM_PIN_D1 18
+      |         ^~~~~~~~~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:66:9: note: this is the location of the previous definition
+   66 | #define CAM_PIN_D1 5
+      |         ^~~~~~~~~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:221:9: warning: "CAM_PIN_D0" redefined
+  221 | #define CAM_PIN_D0 5
+      |         ^~~~~~~~~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:67:9: note: this is the location of the previous definition
+   67 | #define CAM_PIN_D0 4
+      |         ^~~~~~~~~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:227:20: error: redefinition of 'TAG'
+  227 | static const char *TAG = "Final";
+      |                    ^~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:115:20: note: previous definition of 'TAG' with type 'const char *'
+  115 | static const char *TAG = "example:take_picture";
+      |                    ^~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:229:24: error: redefinition of 'camera_config'
+  229 | static camera_config_t camera_config = {
+      |                        ^~~~~~~~~~~~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:118:24: note: previous definition of 'camera_config' with type 'camera_config_t'
+  118 | static camera_config_t camera_config = {
+      |                        ^~~~~~~~~~~~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:261:11: error: redefinition of 'init_camera'
+  261 | esp_err_t init_camera(void) {
+      |           ^~~~~~~~~~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:151:18: note: previous definition of 'init_camera' with type 'esp_err_t(void)' {aka 'int(void)'}
+  151 | static esp_err_t init_camera(void)
+      |                  ^~~~~~~~~~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:308:6: error: redefinition of 'app_main'
+  308 | void app_main(void) {
+      |      ^~~~~~~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:165:6: note: previous definition of 'app_main' with type 'void(void)'
+  165 | void app_main(void)
+      |      ^~~~~~~~
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c: In function 'app_main':
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:316:23: error: implicit declaration of function 'esp_timer_get_time'; did you mean 'timer_gettime'? [-Wimplicit-function-declaration]
+  316 |     int64_t t_start = esp_timer_get_time();
+      |                       ^~~~~~~~~~~~~~~~~~
+      |                       timer_gettime
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj] Error 1
+make[1]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [all] Error 2

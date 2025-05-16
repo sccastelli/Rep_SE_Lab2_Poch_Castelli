@@ -1,0 +1,56 @@
+Command: /Users/sofiacastelli/esp/idf-tools/python_env/idf5.5_py3.13_env/bin/python /Users/sofiacastelli/esp/idf/esp-idf/tools/idf_monitor.py -p /dev/cu.usbserial-110 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/build/ejercicio_final.elf /Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/build/bootloader/bootloader.elf -m '/Users/sofiacastelli/esp/idf-tools/python_env/idf5.5_py3.13_env/bin/python' '/Users/sofiacastelli/esp/idf/esp-idf/tools/idf.py'
+[0;33m--- esp-idf-monitor 1.5.0 on /dev/cu.usbserial-110 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40080400: _invalid_pc_placeholder at /Users/sofiacastelli/esp/idf/esp-idf/components/xtensa/xtensa_vectors.S:2235
+[0m
+[0;33m--- 0x40080638: call_start_cpu0 at /Users/sofiacastelli/esp/idf/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0;33m--- 0x40081959: panic_abort at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/panic.c:468
+0x40085c8d: esp_system_abort at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/port/esp_system_chip.c:87
+0x4008bf39: __assert_func at /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/src/assert.c:80
+0x400d220e: __esp_system_init_fn_init_flash at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/startup_funcs.c:114 (discriminator 1)
+0x400d2b07: do_system_init_fn at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/startup.c:132
+0x400d2b51: do_core_init at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/startup.c:170
+0x400d2bbb: start_cpu0_default at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/startup.c:203
+0x400814a6: call_start_cpu0 at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/port/cpu_start.c:830 (discriminator 1)
+0x40079776: set_cache_and_start_app at /Users/sofiacastelli/esp/idf/esp-idf/components/bootloader_support/src/bootloader_utility.c:1158
+ (inlined by) unpack_load_app at /Users/sofiacastelli/esp/idf/esp-idf/components/bootloader_support/src/bootloader_utility.c:893
+ (inlined by) load_image at /Users/sofiacastelli/esp/idf/esp-idf/components/bootloader_support/src/bootloader_utility.c:803
+[0m
+[0;33m--- 0x40080400: _invalid_pc_placeholder at /Users/sofiacastelli/esp/idf/esp-idf/components/xtensa/xtensa_vectors.S:2235
+[0m
+[0;33m--- 0x40080638: call_start_cpu0 at /Users/sofiacastelli/esp/idf/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0;33m--- 0x40081959: panic_abort at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/panic.c:468
+0x40085c8d: esp_system_abort at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/port/esp_system_chip.c:87
+0x4008bf39: __assert_func at /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/src/assert.c:80
+0x400d220e: __esp_system_init_fn_init_flash at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/startup_funcs.c:114 (discriminator 1)
+0x400d2b07: do_system_init_fn at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/startup.c:132
+0x400d2b51: do_core_init at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/startup.c:170
+0x400d2bbb: start_cpu0_default at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/startup.c:203
+0x400814a6: call_start_cpu0 at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/port/cpu_start.c:830 (discriminator 1)
+0x40079776: set_cache_and_start_app at /Users/sofiacastelli/esp/idf/esp-idf/components/bootloader_support/src/bootloader_utility.c:1158
+ (inlined by) unpack_load_app at /Users/sofiacastelli/esp/idf/esp-idf/components/bootloader_support/src/bootloader_utility.c:893
+ (inlined by) load_image at /Users/sofiacastelli/esp/idf/esp-idf/components/bootloader_support/src/bootloader_utility.c:803
+[0m
+[0;33m--- 0x40080400: _invalid_pc_placeholder at /Users/sofiacastelli/esp/idf/esp-idf/components/xtensa/xtensa_vectors.S:2235
+[0m
+[0;33m--- 0x40080638: call_start_cpu0 at /Users/sofiacastelli/esp/idf/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0;33m--- 0x40081959: panic_abort at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/panic.c:468
+0x40085c8d: esp_system_abort at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/port/esp_system_chip.c:87
+0x4008bf39: __assert_func at /Users/sofiacastelli/esp/idf/esp-idf/components/newlib/src/assert.c:80
+0x400d220e: __esp_system_init_fn_init_flash at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/startup_funcs.c:114 (discriminator 1)
+0x400d2b07: do_system_init_fn at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/startup.c:132
+0x400d2b51: do_core_init at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/startup.c:170
+0x400d2bbb: start_cpu0_default at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/startup.c:203
+0x400814a6: call_start_cpu0 at /Users/sofiacastelli/esp/idf/esp-idf/components/esp_system/port/cpu_start.c:830 (discriminator 1)
+0x40079776: set_cache_and_start_app at /Users/sofiacastelli/esp/idf/esp-idf/components/bootloader_support/src/bootloader_utility.c:1158
+ (inlined by) unpack_load_app at /Users/sofiacastelli/esp/idf/esp-idf/components/bootloader_support/src/bootloader_utility.c:893
+ (inlined by) load_image at /Users/sofiacastelli/esp/idf/esp-idf/components/bootloader_support/src/bootloader_utility.c:803
+[0m
+[0;33m--- 0x40080400: _invalid_pc_placeholder at /Users/sofiacastelli/esp/idf/esp-idf/components/xtensa/xtensa_vectors.S:2235
+[0m
+[0;33m--- 0x40080638: call_start_cpu0 at /Users/sofiacastelli/esp/idf/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0m

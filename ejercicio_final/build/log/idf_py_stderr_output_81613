@@ -1,0 +1,10 @@
+Command: make -j 10 all
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c: In function 'app_main':
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:149:27: error: 'portTICK_RATE_MS' undeclared (first use in this function); did you mean 'portTICK_PERIOD_MS'?
+  149 |         vTaskDelay(1000 / portTICK_RATE_MS);  // 1 segundo entre capturas
+      |                           ^~~~~~~~~~~~~~~~
+      |                           portTICK_PERIOD_MS
+/Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/main/ejercicio_final.c:149:27: note: each undeclared identifier is reported only once for each function it appears in
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/ejercicio_final.c.obj] Error 1
+make[1]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [all] Error 2

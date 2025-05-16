@@ -1,0 +1,109 @@
+Command: /Users/sofiacastelli/esp/idf-tools/python_env/idf5.5_py3.13_env/bin/python /Users/sofiacastelli/esp/idf/esp-idf/tools/idf_monitor.py -p /dev/cu.usbserial-110 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/build/ejercicio_final.elf /Users/sofiacastelli/Documents/GitHub/Rep_SE_Lab2_Poch_Castelli/ejercicio_final/build/bootloader/bootloader.elf -m '/Users/sofiacastelli/esp/idf-tools/python_env/idf5.5_py3.13_env/bin/python' '/Users/sofiacastelli/esp/idf/esp-idf/tools/idf.py'
+ets Jul �ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2488-gee77c489e7 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 16 2025 15:49:55[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v3.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000e000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot:  3 storage          Unknown data     01 82 00110000 00100000[0m
+[0;32mI (84) boot: End of partition table[0m
+[0;32mI (87) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ef68h ( 61288) map[0m
+[0;32mI (115) esp_image: segment 1: paddr=0001ef90 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (116) esp_image: segment 2: paddr=0001efb4 vaddr=3ffb0000 size=01064h (  4196) load[0m
+[0;32mI (121) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=25674h (153204) map[0m
+[0;32mI (179) esp_image: segment 4: paddr=0004569c vaddr=3ffb1064 size=0254ch (  9548) load[0m
+[0;32mI (183) esp_image: segment 5: paddr=00047bf0 vaddr=40080000 size=0e0ech ( 57580) load[0m
+[0;32mI (213) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (213) boot: Disabling RNG early entropy source...[0m
+[0;32mI (223) cpu_start: Multicore app[0m
+[0;32mI (232) cpu_start: Pro cpu start user code[0m
+[0;32mI (232) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (232) app_init: Application information:[0m
+[0;32mI (232) app_init: Project name:     ejercicio_final[0m
+[0;32mI (236) app_init: App version:      41fc6fd-dirty[0m
+[0;32mI (241) app_init: Compile time:     May 16 2025 15:50:19[0m
+[0;32mI (246) app_init: ELF file SHA256:  24b7c4c80...[0m
+[0;32mI (250) app_init: ESP-IDF:          v5.5-dev-2488-gee77c489e7[0m
+[0;32mI (256) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (259) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (263) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (267) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (274) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (279) heap_init: At 3FFB4768 len 0002B898 (174 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (289) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (295) heap_init: At 4008E0EC len 00011F14 (71 KiB): IRAM[0m
+[0;32mI (301) spi_flash: detected chip: generic[0m
+[0;32mI (304) spi_flash: flash io: dio[0m
+[0;32mI (307) main_task: Started on CPU0[0m
+[0;32mI (317) main_task: Calling app_main()[0m
+[0;32mI (337) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (337) cam_hal: cam init ok[0m
+[0;32mI (337) sccb-ng: pin_sda 26 pin_scl 27[0m
+[0;32mI (347) sccb-ng: sccb_i2c_port=1[0m
+[0;32mI (347) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (387) camera: Detected camera at address=0x30[0m
+[0;32mI (387) camera: Detected OV2640 camera[0m
+[0;32mI (387) camera: Camera PID=0x26 VER=0x42 MIDL=0x7f MIDH=0xa2[0m
+[0;32mI (457) esp32 ll_cam: node_size: 3072, nodes_per_line: 1, lines_per_node: 4, dma_half_buffer_min:  3072, dma_half_buffer: 12288,lines_per_half_buffer: 16, dma_buffer_size: 24576, image_size: 18432[0m
+[0;32mI (467) cam_hal: buffer_size: 24576, half_buffer_size: 12288, node_buffer_size: 3072, node_cnt: 8, total_cnt: 1[0m
+[0;32mI (477) cam_hal: Allocating 9216 Byte frame buffer in OnBoard RAM[0m
+[0;32mI (477) cam_hal: cam config ok[0m
+[0;32mI (487) ov2640: Set PLL: clk_2x: 0, clk_div: 3, pclk_auto: 1, pclk_div: 8[0m
+[0;32mI (697) FINAL: Imagen procesada y almacenada (1/20)[0m
+[0;32mI (1697) FINAL: Imagen procesada y almacenada (2/20)[0m
+[0;32mI (2697) FINAL: Imagen procesada y almacenada (3/20)[0m
+[0;32mI (3697) FINAL: Imagen procesada y almacenada (4/20)[0m
+[0;32mI (4697) FINAL: Imagen procesada y almacenada (5/20)[0m
+[0;32mI (5697) FINAL: Imagen procesada y almacenada (6/20)[0m
+[0;32mI (6697) FINAL: Imagen procesada y almacenada (7/20)[0m
+[0;32mI (7697) FINAL: Imagen procesada y almacenada (8/20)[0m
+[0;32mI (8697) FINAL: Imagen procesada y almacenada (9/20)[0m
+[0;32mI (9697) FINAL: Imagen procesada y almacenada (10/20)[0m
+[0;32mI (10697) FINAL: Imagen procesada y almacenada (11/20)[0m
+[0;32mI (11697) FINAL: Imagen procesada y almacenada (12/20)[0m
+[0;32mI (12697) FINAL: Imagen procesada y almacenada (13/20)[0m
+[0;32mI (13697) FINAL: Imagen procesada y almacenada (14/20)[0m
+[0;32mI (14697) FINAL: Imagen procesada y almacenada (15/20)[0m
+[0;32mI (15697) FINAL: Imagen procesada y almacenada (16/20)[0m
+[0;32mI (16697) FINAL: Imagen procesada y almacenada (17/20)[0m
+[0;32mI (17697) FINAL: Imagen procesada y almacenada (18/20)[0m
+[0;32mI (18697) FINAL: Imagen procesada y almacenada (19/20)[0m
+[0;32mI (19697) FINAL: Imagen procesada y almacenada (20/20)[0m
+[0;32mI (20697) FINAL: Imagen procesada y almacenada (20/20)[0m
+[0;32mI (21697) FINAL: Imagen procesada y almacenada (20/20)[0m
+[0;32mI (22697) FINAL: Imagen procesada y almacenada (20/20)[0m
+[0;32mI (23697) FINAL: Imagen procesada y almacenada (20/20)[0m
+[0;32mI (24697) FINAL: Imagen procesada y almacenada (20/20)[0m
+[0;32mI (25697) FINAL: Imagen procesada y almacenada (20/20)[0m
+[0;32mI (26697) FINAL: Imagen procesada y almacenada (20/20)[0m
+[0;32mI (27697) FINAL: Imagen procesada y almacenada (20/20)[0m
+[0;32mI (28697) FINAL: Imagen procesada y almacenada (20/20)[0m
+[0;32mI (29697) FINAL: Imagen procesada y almacenada (20/20)[0m
+[0;32mI (30697) FINAL: Imagen procesada y almacenada (20/20)[0m
+[0;32mI (31697) FINAL: Imagen procesada y almacenada (20/20)[0m
+[0;32mI (32697) FINAL: Imagen procesada y almacenada (20/20)[0m
+[0;32mI (33697) FINAL: Imagen procesada y almacenada (20/20)[0m
+[0;32mI (34697) FINAL: Imagen procesada y almacenada (20/20)[0m
+[0;32mI (35697) FINAL: Imagen procesada y almacenada (20/20)[0m
+[0;32mI (36697) FINAL: Imagen procesada y almacenada (20/20)[0m
+[0;32mI (37697) FINAL: Imagen procesada y almacenada (20/20)[0m
+[0;32mI (38697) FINAL: Imagen procesada y almacenada (20/20)[0m
+[0;32mI (39697) FINAL: Imagen procesada y almacenada (20/20)[0m
