@@ -1,0 +1,14 @@
+# Ignorar carpetas de build en cualquier subdirectorio
+build/
+*/build/
+**/build/
+
+# Ignorar archivos de configuración generados
+sdkconfig
+sdkconfig.old
+
+# Ignorar archivos binarios y de compilación
+*.bin
+*.elf
+*.map
+*.txt
