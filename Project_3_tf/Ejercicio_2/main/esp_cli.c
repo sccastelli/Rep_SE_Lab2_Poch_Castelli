@@ -24,7 +24,7 @@
 #include "esp_cli.h"
 #include "esp_timer.h"
 
-#define IMAGE_COUNT 10
+#define IMAGE_COUNT 11
 static uint8_t *image_database[IMAGE_COUNT];
 
 
@@ -38,6 +38,8 @@ extern const uint8_t image6_start[]   asm("_binary_image6_start");
 extern const uint8_t image7_start[]   asm("_binary_image7_start");
 extern const uint8_t image8_start[]   asm("_binary_image8_start");
 extern const uint8_t image9_start[]   asm("_binary_image9_start");
+extern const uint8_t image10_start[]   asm("_binary_image10_start");
+
 
 static const char *TAG = "[esp_cli]";
 
@@ -168,6 +170,7 @@ static void image_database_init()
     image_database[7] = (uint8_t *) image7_start;
     image_database[8] = (uint8_t *) image8_start;
     image_database[9] = (uint8_t *) image9_start;
+    image_database[10] = (uint8_t *) image10_start;
 
 }
 
