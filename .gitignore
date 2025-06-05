@@ -11,4 +11,4 @@ sdkconfig.old
 *.bin
 *.elf
 *.map
-*.txt
+
