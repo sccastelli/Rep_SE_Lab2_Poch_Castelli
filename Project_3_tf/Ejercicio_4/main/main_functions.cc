@@ -15,10 +15,9 @@ limitations under the License.
 
 #include "main_functions.h"
 
-#include "detection_responder.h"
 #include "image_provider.h"
 #include "model_settings.h"
-#include "person_detect_model_data.h"
+#include "digit_model_data.h"
 #include "tensorflow/lite/micro/micro_interpreter.h"
 #include "tensorflow/lite/micro/micro_log.h"
 #include "tensorflow/lite/micro/micro_mutable_op_resolver.h"
@@ -60,7 +59,7 @@ static uint8_t *tensor_arena;//[kTensorArenaSize]; // Maybe we should move this 
 void setup() {
   // Map the model into a usable data structure. This doesn't involve any
   // copying or parsing, it's a very lightweight operation.
-  model = tflite::GetModel(g_person_detect_model_data);
+  model = tflite::GetModel(digit_model_tflite);
   if (model->version() != TFLITE_SCHEMA_VERSION) {
     MicroPrintf("Model provided is schema version %d not equal to supported "
                 "version %d.", model->version(), TFLITE_SCHEMA_VERSION);
@@ -83,12 +82,14 @@ void setup() {
   //
   // tflite::AllOpsResolver resolver;
   // NOLINTNEXTLINE(runtime-global-variables)
-  static tflite::MicroMutableOpResolver<5> micro_op_resolver;
-  micro_op_resolver.AddAveragePool2D();
+  static tflite::MicroMutableOpResolver<10> micro_op_resolver;
   micro_op_resolver.AddConv2D();
-  micro_op_resolver.AddDepthwiseConv2D();
+  micro_op_resolver.AddMaxPool2D();
   micro_op_resolver.AddReshape();
+  micro_op_resolver.AddFullyConnected();
   micro_op_resolver.AddSoftmax();
+  micro_op_resolver.AddQuantize();
+  micro_op_resolver.AddDequantize();
 
   // Build an interpreter to run the model with.
   // NOLINTNEXTLINE(runtime-global-variables)
@@ -116,33 +117,46 @@ void setup() {
 #endif
 }
 
-#ifndef CLI_ONLY_INFERENCE
-// The name of this function is important for Arduino compatibility.
-void loop() {
-  // Get image from provider.
-  if (kTfLiteOk != GetImage(kNumCols, kNumRows, kNumChannels, input->data.int8)) {
-    MicroPrintf("Image capture failed.");
-  }
 
-  // Run the model on this input and make sure it succeeds.
-  if (kTfLiteOk != interpreter->Invoke()) {
-    MicroPrintf("Invoke failed.");
+#ifndef CLI_ONLY_INFERENCE
+void loop() {
+  printf("[INFO] Capturando imagen...\n");
+
+  if (kTfLiteOk != GetImage(kNumCols, kNumRows, kNumChannels, input->data.int8)) {
+    printf("[ERROR] Error al capturar imagen\n");
+    return;
   }
+  printf("[INFO] Imagen capturada exitosamente\n");
+
+  printf("[INFO] Ejecutando inferencia...\n");
+  if (kTfLiteOk != interpreter->Invoke()) {
+    printf("[ERROR] Error en la inferencia\n");
+    return;
+  }
+  printf("[INFO] Inferencia completada\n");
 
   TfLiteTensor* output = interpreter->output(0);
 
-  // Process the inference results.
-  int8_t person_score = output->data.uint8[kPersonIndex];
-  int8_t no_person_score = output->data.uint8[kNotAPersonIndex];
+  int max_index = 0;
+  float max_score = -INFINITY;
 
-  float person_score_f =
-      (person_score - output->params.zero_point) * output->params.scale;
-  float no_person_score_f =
-      (no_person_score - output->params.zero_point) * output->params.scale;
+  for (int i = 0; i < output->dims->data[1]; ++i) {
+      float score = (output->data.int8[i] - output->params.zero_point) * output->params.scale;
+      printf("[DEBUG] Clase %d -> Score: %.3f\n", i, score);
 
-  // Respond to detection
-  RespondToDetection(person_score_f, no_person_score_f);
-  vTaskDelay(1); // to avoid watchdog trigger
+      if (score > max_score) {
+          max_score = score;
+          max_index = i;
+      }
+  }
+
+  if (max_index == 10) {
+      printf("[RESULT] ↪ No se detecta ningún dígito (score: %.3f)\n", max_score);
+  } else {
+      printf("[RESULT] Dígito detectado: %d (score: %.3f)\n", max_index, max_score);
+  }
+
+  vTaskDelay(1000 / portTICK_PERIOD_MS);  // Espera 1 segundo entre inferencias
 }
 #endif
 
@@ -193,16 +207,4 @@ void run_inference(void *ptr) {
   add_total_time = 0;
   mul_total_time = 0;
 #endif
-
-  TfLiteTensor* output = interpreter->output(0);
-
-  // Process the inference results.
-  int8_t person_score = output->data.uint8[kPersonIndex];
-  int8_t no_person_score = output->data.uint8[kNotAPersonIndex];
-
-  float person_score_f =
-      (person_score - output->params.zero_point) * output->params.scale;
-  float no_person_score_f =
-      (no_person_score - output->params.zero_point) * output->params.scale;
-  RespondToDetection(person_score_f, no_person_score_f);
 }
