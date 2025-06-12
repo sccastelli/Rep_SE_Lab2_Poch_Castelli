@@ -9,7 +9,7 @@ constexpr int kNumChannels = 1;
 constexpr int kMaxImageSize = kNumCols * kNumRows * kNumChannels;
 
 // MNIST tiene 10 clases: dígitos del 0 al 9
-constexpr int kCategoryCount = 10;
+constexpr int kCategoryCount = 11;
 
 extern const char* kCategoryLabels[kCategoryCount];
 

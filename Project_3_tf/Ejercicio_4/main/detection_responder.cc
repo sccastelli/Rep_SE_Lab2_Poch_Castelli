@@ -1,6 +1,6 @@
 #include "detection_responder.h"
 #include "tensorflow/lite/micro/micro_log.h"
-
+#include "model_settings.h"  
 #include "esp_main.h"
 
 #if DISPLAY_SUPPORT
@@ -42,19 +42,18 @@ void RespondToDetection(int digit, float score) {
   lv_canvas_set_buffer(camera_canvas, buf, IMG_WD, IMG_HT, LV_IMG_CF_TRUE_COLOR);
 
   char text[32];
-  if (digit == -1) {
-    snprintf(text, sizeof(text), "No digit (%.2f%%)", score * 100.0f);
+  if (digit >= 0 && digit < kCategoryCount) {
+    snprintf(text, sizeof(text), "%s (%.2f%%)", kCategoryLabels[digit], score * 100.0f);
   } else {
-    snprintf(text, sizeof(text), "Digit: %d (%.2f%%)", digit, score * 100.0f);
+    snprintf(text, sizeof(text), "Invalid class");
   }
   lv_label_set_text(digit_label, text);
   bsp_display_unlock();
 #endif
 
-  char text[32];
-  if (digit == -1) {
-    MicroPrintf("❌ No digit detected (%.2f%%)", score * 100.0f);
+  if (digit >= 0 && digit < kCategoryCount) {
+    MicroPrintf("🔢 Resultado: %s (%.2f%%)", kCategoryLabels[digit], score * 100.0f);
   } else {
-    MicroPrintf("🔢 Dígito detectado: %d (%.2f%%)", digit, score * 100.0f);
+    MicroPrintf("❌ Clase inválida detectada (%.2f%%)", score * 100.0f);
   }
 }

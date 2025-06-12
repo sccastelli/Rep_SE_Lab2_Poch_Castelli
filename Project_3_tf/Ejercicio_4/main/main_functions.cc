@@ -101,9 +101,8 @@ void loop() {
   // 🧠 Umbral de confianza mínima para considerar la predicción como válida
   constexpr float kDetectionThreshold = 0.6f;
 
-  if (max_score < kDetectionThreshold) {
-    // 🔴 No hay dígito con suficiente confianza
-    RespondToDetection(-1, max_score);
+  if (predicted_digit == 10 || max_score < kDetectionThreshold) {
+    RespondToDetection(10, max_score);  // usamos 10 como el índice de "no digit"
   } else {
     RespondToDetection(predicted_digit, max_score);
   }
