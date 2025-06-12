@@ -98,8 +98,17 @@ void loop() {
     }
   }
 
-  RespondToDetection(predicted_digit, max_score);
+  // 🧠 Umbral de confianza mínima para considerar la predicción como válida
+  constexpr float kDetectionThreshold = 0.6f;
 
-  vTaskDelay(1);
+  if (max_score < kDetectionThreshold) {
+    // 🔴 No hay dígito con suficiente confianza
+    RespondToDetection(-1, max_score);
+  } else {
+    RespondToDetection(predicted_digit, max_score);
+  }
+
+  vTaskDelay(1);  // evita que el watchdog se dispare
 }
-#endif
+
+#endif  // CLI_ONLY_INFERENCE
