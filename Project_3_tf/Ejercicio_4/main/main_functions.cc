@@ -28,10 +28,17 @@ constexpr int scratchBufSize = 0;
 
 constexpr int kTensorArenaSize = 100 * 1024 + scratchBufSize;
 static uint8_t* tensor_arena = nullptr;
+
+constexpr float kDetectionThreshold = 0.6f;
+constexpr int kNoDigitClassIndex = 10;
 }  // namespace
 
 void setup() {
   model = tflite::GetModel(g_digit_detect_model_data);
+  if (model == nullptr) {
+    MicroPrintf("❌ Error: el modelo no se cargó correctamente");
+    return;
+  }
   if (model->version() != TFLITE_SCHEMA_VERSION) {
     MicroPrintf("❌ Modelo incompatible (versión %d, esperado %d)",
                 model->version(), TFLITE_SCHEMA_VERSION);
@@ -44,15 +51,15 @@ void setup() {
     return;
   }
 
-static tflite::MicroMutableOpResolver<6> micro_op_resolver;
-
-micro_op_resolver.AddConv2D();
-micro_op_resolver.AddFullyConnected();
-micro_op_resolver.AddReshape();
-micro_op_resolver.AddSoftmax();
-micro_op_resolver.AddMaxPool2D();  // 👈 ¡Esto es lo que te falta!
-micro_op_resolver.AddQuantize();   // Por si acaso también la usas
-
+  static tflite::MicroMutableOpResolver<8> micro_op_resolver;
+  micro_op_resolver.AddConv2D();
+  micro_op_resolver.AddFullyConnected();
+  micro_op_resolver.AddReshape();
+  micro_op_resolver.AddSoftmax();
+  micro_op_resolver.AddMaxPool2D();
+  micro_op_resolver.AddQuantize();
+  micro_op_resolver.AddCast();
+  micro_op_resolver.AddMean();
 
   static tflite::MicroInterpreter static_interpreter(model, micro_op_resolver, tensor_arena, kTensorArenaSize);
   interpreter = &static_interpreter;
@@ -61,8 +68,15 @@ micro_op_resolver.AddQuantize();   // Por si acaso también la usas
     MicroPrintf("❌ AllocateTensors() falló");
     return;
   }
+  MicroPrintf("✅ AllocateTensors() exitoso");
 
   input = interpreter->input(0);
+  MicroPrintf("✅ Input tensor type: %d", input->type);
+  MicroPrintf("✅ Input scale: %f", input->params.scale);
+  MicroPrintf("✅ Input zero_point: %d", input->params.zero_point);
+  MicroPrintf("Input tensor dims: %d x %d x %d", input->dims->data[1], input->dims->data[2], input->dims->data[3]);
+  MicroPrintf("Input tensor total bytes: %d", input->bytes);
+
 
 #ifndef CLI_ONLY_INFERENCE
   if (InitCamera() != kTfLiteOk) {
@@ -75,39 +89,68 @@ micro_op_resolver.AddQuantize();   // Por si acaso también la usas
 #ifndef CLI_ONLY_INFERENCE
 void loop() {
   MicroPrintf("📷 Capturando imagen...");
+  if (input == nullptr) {
+    MicroPrintf("❌ input == nullptr, saliendo del loop.");
+    return;
+  }
+
+  if (input->bytes != 96 * 96) {
+    MicroPrintf("❌ Tamaño del input incorrecto: %d bytes", input->bytes);
+    return;
+  }
+
+  for (int i = 0; i < 10; ++i) {
+    MicroPrintf("input[%d] = %d", i, input->data.int8[i]);
+  }
+
+
+
   if (GetImage(kNumCols, kNumRows, kNumChannels, input->data.int8) != kTfLiteOk) {
     MicroPrintf("❌ Error al capturar imagen");
     return;
   }
 
+  // Inferencia
+  int64_t start_us = esp_timer_get_time();
   if (interpreter->Invoke() != kTfLiteOk) {
     MicroPrintf("❌ Error en Invoke()");
     return;
   }
+  int64_t elapsed_us = esp_timer_get_time() - start_us;
+  MicroPrintf("⏱ Tiempo de inferencia: %lld us", elapsed_us);
 
   TfLiteTensor* output = interpreter->output(0);
-  float* probabilities = output->data.f;
+  MicroPrintf("✅ Output tensor type: %d", output->type);
+  MicroPrintf("✅ Output scale: %f", output->params.scale);
+  int8_t* raw_output = output->data.int8;
+  float scale = output->params.scale;
+  int zero_point = output->params.zero_point;
 
+  MicroPrintf("📊 Scores por clase:");
   int predicted_digit = 0;
-  float max_score = probabilities[0];
+  float max_score = (raw_output[0] - zero_point) * scale;
 
-  for (int i = 1; i < kCategoryCount; ++i) {
-    if (probabilities[i] > max_score) {
-      max_score = probabilities[i];
+  for (int i = 0; i < kCategoryCount; ++i) {
+    float score = (raw_output[i] - zero_point) * scale;
+    MicroPrintf(" - Clase %d (%s): %.2f%%", i, kCategoryLabels[i], score * 100.0f);
+
+    if (score > max_score) {
+      max_score = score;
       predicted_digit = i;
     }
   }
 
-  // 🧠 Umbral de confianza mínima para considerar la predicción como válida
-  constexpr float kDetectionThreshold = 0.6f;
-
-  if (predicted_digit == 10 || max_score < kDetectionThreshold) {
-    RespondToDetection(10, max_score);  // usamos 10 como el índice de "no digit"
+  // Mostrar resultado
+  if (max_score < 0.5f) {
+    MicroPrintf("🔢 Resultado: no digit (%.2f%%)", max_score * 100.0f);
   } else {
-    RespondToDetection(predicted_digit, max_score);
+    MicroPrintf("🔢 Resultado: %s (%.2f%%)", kCategoryLabels[predicted_digit], max_score * 100.0f);
   }
 
-  vTaskDelay(1);  // evita que el watchdog se dispare
+  // Solo llama a RespondToDetection si la clase es válida (0-9)
+  RespondToDetection(predicted_digit, max_score);
+
+  vTaskDelay(1);
 }
 
 #endif  // CLI_ONLY_INFERENCE
