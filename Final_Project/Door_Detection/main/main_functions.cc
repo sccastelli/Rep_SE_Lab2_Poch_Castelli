@@ -106,45 +106,46 @@ void setup() {
   // Get information about the memory area to use for the model's input.
   input = interpreter->input(0);
 
-#ifndef CLI_ONLY_INFERENCE
   // Initialize Camera
   TfLiteStatus init_status = InitCamera();
   if (init_status != kTfLiteOk) {
     MicroPrintf("InitCamera failed\n");
     return;
   }
-#endif
 }
 
-#ifndef CLI_ONLY_INFERENCE
-// The name of this function is important for Arduino compatibility.
+
+
 void loop() {
-  // Get image from provider.
+  MicroPrintf("🟡 loop() started...");
+
   if (kTfLiteOk != GetImage(kNumCols, kNumRows, kNumChannels, input->data.int8)) {
-    MicroPrintf("Image capture failed.");
+    MicroPrintf("❌ Image capture failed.");
+  } else {
+    MicroPrintf("✅ Image captured.");
   }
 
-  // Run the model on this input and make sure it succeeds.
   if (kTfLiteOk != interpreter->Invoke()) {
-    MicroPrintf("Invoke failed.");
+    MicroPrintf("❌ Invoke failed.");
   }
 
   TfLiteTensor* output = interpreter->output(0);
 
-  // Process the inference results.
-  int8_t person_score = output->data.uint8[kPersonIndex];
-  int8_t no_person_score = output->data.uint8[kNotAPersonIndex];
+  int8_t door_open_score = output->data.int8[kDoorOpenIndex];
+  int8_t door_closed_score = output->data.int8[kDoorClosedIndex];
 
-  float person_score_f =
-      (person_score - output->params.zero_point) * output->params.scale;
-  float no_person_score_f =
-      (no_person_score - output->params.zero_point) * output->params.scale;
+  float door_open_score_f =
+      (door_open_score - output->params.zero_point) * output->params.scale;
+  float door_closed_score_f =
+      (door_closed_score - output->params.zero_point) * output->params.scale;
 
-  // Respond to detection
-  RespondToDetection(person_score_f, no_person_score_f);
-  vTaskDelay(1); // to avoid watchdog trigger
+  MicroPrintf("🚪 door open score: %.2f, 🔒 door closed score: %.2f", door_open_score_f, door_closed_score_f);
+
+  RespondToDetection(door_open_score_f, door_closed_score_f);
+  vTaskDelay(1);
 }
-#endif
+
+
 
 #if defined(COLLECT_CPU_STATS)
   long long total_time = 0;
@@ -197,12 +198,12 @@ void run_inference(void *ptr) {
   TfLiteTensor* output = interpreter->output(0);
 
   // Process the inference results.
-  int8_t person_score = output->data.uint8[kPersonIndex];
-  int8_t no_person_score = output->data.uint8[kNotAPersonIndex];
+  int8_t door_open_score = output->data.int8[kDoorOpenIndex];
+  int8_t door_closed_score = output->data.int8[kDoorClosedIndex];
 
-  float person_score_f =
-      (person_score - output->params.zero_point) * output->params.scale;
-  float no_person_score_f =
-      (no_person_score - output->params.zero_point) * output->params.scale;
-  RespondToDetection(person_score_f, no_person_score_f);
+  float door_open_score_f =
+      (door_open_score - output->params.zero_point) * output->params.scale;
+  float door_closed_score_f =
+      (door_closed_score - output->params.zero_point) * output->params.scale;
+  RespondToDetection(door_open_score_f, door_closed_score_f);
 }
