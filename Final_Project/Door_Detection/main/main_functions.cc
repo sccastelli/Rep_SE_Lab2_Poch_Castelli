@@ -18,7 +18,7 @@ limitations under the License.
 #include "detection_responder.h"
 #include "image_provider.h"
 #include "model_settings.h"
-#include "person_detect_model_data.h"
+#include "door_detect_model_data.h"
 #include "tensorflow/lite/micro/micro_interpreter.h"
 #include "tensorflow/lite/micro/micro_log.h"
 #include "tensorflow/lite/micro/micro_mutable_op_resolver.h"
@@ -60,7 +60,7 @@ static uint8_t *tensor_arena;//[kTensorArenaSize]; // Maybe we should move this 
 void setup() {
   // Map the model into a usable data structure. This doesn't involve any
   // copying or parsing, it's a very lightweight operation.
-  model = tflite::GetModel(g_person_detect_model_data);
+  model = tflite::GetModel(model_door_quant_tflite);
   if (model->version() != TFLITE_SCHEMA_VERSION) {
     MicroPrintf("Model provided is schema version %d not equal to supported "
                 "version %d.", model->version(), TFLITE_SCHEMA_VERSION);
@@ -83,13 +83,18 @@ void setup() {
   //
   // tflite::AllOpsResolver resolver;
   // NOLINTNEXTLINE(runtime-global-variables)
-  static tflite::MicroMutableOpResolver<5> micro_op_resolver;
-  micro_op_resolver.AddAveragePool2D();
+  static tflite::MicroMutableOpResolver<11> micro_op_resolver;
   micro_op_resolver.AddConv2D();
   micro_op_resolver.AddDepthwiseConv2D();
+  micro_op_resolver.AddAveragePool2D();
+  micro_op_resolver.AddMean();
   micro_op_resolver.AddReshape();
+  micro_op_resolver.AddQuantize();
+  micro_op_resolver.AddDequantize();
   micro_op_resolver.AddSoftmax();
-
+  micro_op_resolver.AddFullyConnected();
+  micro_op_resolver.AddMul(); 
+  micro_op_resolver.AddAdd();
   // Build an interpreter to run the model with.
   // NOLINTNEXTLINE(runtime-global-variables)
   static tflite::MicroInterpreter static_interpreter(
@@ -125,26 +130,35 @@ void loop() {
     MicroPrintf("✅ Image captured.");
   }
 
+  // 🔸 Medir tiempo de inferencia
+  int64_t start_us = esp_timer_get_time();
   if (kTfLiteOk != interpreter->Invoke()) {
     MicroPrintf("❌ Invoke failed.");
+    return;
   }
+  int64_t end_us = esp_timer_get_time();
+  int64_t duration_us = end_us - start_us;
+  MicroPrintf("🧠 Inference took %lld microseconds", duration_us);
 
+  // 🔸 Procesar resultados
   TfLiteTensor* output = interpreter->output(0);
 
   int8_t door_open_score = output->data.int8[kDoorOpenIndex];
   int8_t door_closed_score = output->data.int8[kDoorClosedIndex];
 
   float door_open_score_f =
-      (door_open_score - output->params.zero_point) * output->params.scale;
+    (door_open_score - output->params.zero_point) * output->params.scale;
   float door_closed_score_f =
-      (door_closed_score - output->params.zero_point) * output->params.scale;
-
+    (door_closed_score - output->params.zero_point) * output->params.scale;
+    
+  MicroPrintf("Zero point: %d, Scale: %f", output->params.zero_point, output->params.scale);
   MicroPrintf("🚪 door open score: %.2f, 🔒 door closed score: %.2f", door_open_score_f, door_closed_score_f);
 
   RespondToDetection(door_open_score_f, door_closed_score_f);
-  vTaskDelay(1);
-}
 
+  // 🔸 Esperar 10 segundos antes de la próxima captura
+  vTaskDelay(pdMS_TO_TICKS(10000));  // 10 000 ms = 10 s
+}
 
 
 #if defined(COLLECT_CPU_STATS)
